@@ -14,15 +14,20 @@ y_axis_with_labels = alt.Axis(title='Certainty', grid=True)
 df = pd.read_excel('indikatoren.xlsx')
 st.set_page_config(layout='wide')
 
+
+
+
+
 # Add a small offset to the Certainty values of the data points that have the same value
 offset = 0.07
 df_offset = df.groupby('Certainty', sort=False).apply(lambda x: x.assign(Certainty=x['Certainty'] + offset * x.groupby('Certainty').cumcount()))
+df_offset['Prognose Group'] = pd.cut(df_offset['Prognose'], bins=[-float('inf'), 5, 10, float('inf')], labels=['Group 1', 'Group 2', 'Group 3'])
 
 
 col1, col2 = st.columns([1800, 300])
 
 
-subset_df = df_offset[['Indikator', 'Kategorie', 'STEEP-Kategorie', 'Certainty', 'Impact']]
+subset_df = df_offset[['Indikator', 'Kategorie', 'STEEP-Kategorie', 'Certainty', 'Impact', 'Prognose Group']]
 subset_df = subset_df.dropna(subset=['Certainty', 'Impact'])
 
 
@@ -39,7 +44,25 @@ red_band = alt.Chart(pd.DataFrame({'x': [6, 9]})).mark_rect(color='red', opacity
     x='x:Q'
 )
 
-point = alt.Chart(df).mark_circle(size=60).encode(
+point_groupOne = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 1']).mark_circle(size=60).encode(
+    x=alt.X('Impact', scale=alt.Scale(zero=False), axis=x_axis),
+    y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis_with_labels),
+    tooltip=['Indikator']
+).properties(
+    width=500,
+    height=600,
+).interactive()
+
+point_groupTwo = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 2']).mark_circle(size=60).encode(
+    x=alt.X('Impact', scale=alt.Scale(zero=False), axis=x_axis),
+    y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis_with_labels),
+    tooltip=['Indikator']
+).properties(
+    width=500,
+    height=600,
+).interactive()
+
+point_groupThree = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 3']).mark_circle(size=60).encode(
     x=alt.X('Impact', scale=alt.Scale(zero=False), axis=x_axis),
     y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis_with_labels),
     tooltip=['Indikator']
@@ -49,7 +72,7 @@ point = alt.Chart(df).mark_circle(size=60).encode(
 ).interactive()
 
 # Create the scatter plot with padding
-scatter_plot1 = alt.Chart(subset_df).mark_text(size=15, opacity=1.0, color='white').encode(
+scatter_plot1 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 1']).mark_text(size=15, opacity=1.0, color='white').encode(
     x=alt.X('Impact', title='Impact', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
     y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
     text='Indikator:N'
@@ -60,7 +83,7 @@ scatter_plot1 = alt.Chart(subset_df).mark_text(size=15, opacity=1.0, color='whit
 ).interactive()
 
 
-scatter_plot2 = alt.Chart(subset_df).mark_text(size=15, opacity=1.0, color='white').encode(
+scatter_plot2 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 2']).mark_text(size=15, opacity=1.0, color='white').encode(
     x=alt.X('Impact', scale=alt.Scale(zero=False), axis=x_axis),
     y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis),
     text='Indikator:N'
@@ -70,7 +93,7 @@ scatter_plot2 = alt.Chart(subset_df).mark_text(size=15, opacity=1.0, color='whit
     title=alt.TitleParams(text='5 - 10 Jahre', align='center', anchor='middle', fontSize=16)
 ).interactive()
 
-scatter_plot3 = alt.Chart(subset_df).mark_text(size=15, opacity=1.0, color='white').encode(
+scatter_plot3 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 3']).mark_text(size=15, opacity=1.0, color='white').encode(
     x=alt.X('Impact', scale=alt.Scale(zero=False), axis=x_axis),
     y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis),
     text='Indikator:N'
@@ -85,7 +108,7 @@ scatter_plot3 = alt.Chart(subset_df).mark_text(size=15, opacity=1.0, color='whit
 title = alt.TitleParams(text='Timeframe', align='center', anchor='middle', fontSize=20)
 
 
-scatter_plots = (scatter_plot1 + point | scatter_plot2 + point | scatter_plot3 + point).resolve_scale(
+scatter_plots = (scatter_plot1 + point_groupOne | scatter_plot2 + point_groupTwo | scatter_plot3 + point_groupThree).resolve_scale(
     x='shared',
     y='shared'
 )
