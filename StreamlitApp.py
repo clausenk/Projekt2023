@@ -20,7 +20,7 @@ st.set_page_config(layout='wide')
 offset = 0.07
 df_offset = df.groupby('Certainty', sort=False).apply(lambda x: x.assign(Certainty=x['Certainty'] + offset * x.groupby('Certainty').cumcount()))
 df_offset['Prognose Group'] = pd.cut(df_offset['Prognose'], bins=[-float('inf'), 5, 10, float('inf')], labels=['Group 1', 'Group 2', 'Group 3'])
-
+df['Prognose Group'] = pd.cut(df['Prognose'], bins=[-float('inf'), 5, 10, float('inf')], labels=['Group 1', 'Group 2', 'Group 3'])
 
 col1, col2 = st.columns([1800, 300])
 
@@ -28,10 +28,13 @@ col1, col2 = st.columns([1800, 300])
 subset_df = df_offset[['Indikator', 'Kategorie', 'STEEP-Kategorie', 'Certainty', 'Impact', 'Prognose Group']]
 subset_df = subset_df.dropna(subset=['Certainty', 'Impact'])
 
+subset_df_original = df[['Indikator', 'Kategorie', 'STEEP-Kategorie', 'Certainty', 'Impact', 'Prognose Group']]
+subset_df_original = subset_df_original.dropna(subset=['Certainty', 'Impact'])
+
 
 
 point_groupOne = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 1']).mark_circle(size=60).encode(
-    x=alt.X('Impact', scale=alt.Scale(zero=False), axis=x_axis),
+    x=alt.X('Impact', scale=alt.Scale(domain=(-4, 4)), axis=x_axis),
     y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis_with_labels),
     tooltip=['Indikator']
 ).properties(
@@ -40,8 +43,8 @@ point_groupOne = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 1
 )
 
 point_groupTwo = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 2']).mark_circle(size=60).encode(
-    x=alt.X('Impact', scale=alt.Scale(zero=False), axis=x_axis),
-    y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis_with_labels),
+    x=alt.X('Impact', scale=alt.Scale(domain=(-4, 4)), axis=x_axis),
+    y=alt.Y('Certainty', scale=alt.Scale(domain=(0, 5)), axis=y_axis_with_labels),
     tooltip=['Indikator']
 ).properties(
     width=500,
@@ -49,7 +52,7 @@ point_groupTwo = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 2
 ).interactive()
 
 point_groupThree = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 3']).mark_circle(size=60).encode(
-    x=alt.X('Impact', scale=alt.Scale(zero=False), axis=x_axis),
+    x=alt.X('Impact', scale=alt.Scale(domain=(-4, 4)), axis=x_axis),
     y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis_with_labels),
     tooltip=['Indikator']
 ).properties(
@@ -59,7 +62,7 @@ point_groupThree = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group
 
 # Create the scatter plot with padding
 scatter_plot1 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 1']).mark_text(size=15, opacity=1.0, color='white', dy=15).encode(
-    x=alt.X('Impact', title='Impact', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
+    x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(-4, 4)), axis=alt.Axis(format='~')),
     y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
     text='Indikator:N'
 ).properties(
@@ -70,7 +73,7 @@ scatter_plot1 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 1'
 
 
 scatter_plot2 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 2']).mark_text(size=15, opacity=1.0, color='white', dy=15).encode(
-    x=alt.X('Impact', scale=alt.Scale(zero=False), axis=x_axis),
+    x=alt.X('Impact', scale=alt.Scale(domain=(-4, 4)), axis=x_axis),
     y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis),
     text='Indikator:N'
 ).properties(
@@ -80,7 +83,7 @@ scatter_plot2 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 2'
 )
 
 scatter_plot3 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 3']).mark_text(size=15, opacity=1.0, color='white', dy=15).encode(
-    x=alt.X('Impact', scale=alt.Scale(zero=False), axis=x_axis),
+    x=alt.X('Impact', scale=alt.Scale(domain=(-4, 4)), axis=x_axis),
     y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis),
     text='Indikator:N'
 ).properties(
