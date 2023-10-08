@@ -12,6 +12,19 @@ y_axis = alt.Axis(title=None, grid=True, labels=False)
 df = pd.read_excel('indikatoren.xlsx')
 st.set_page_config(layout='wide')
 
+# Add a CSS style to change the background color to white
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #FFFFFF;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
 # Add a small offset to the Certainty values of the data points that have the same value
 offset = 0.07
 df_offset = df.groupby('Certainty', sort=False).apply(lambda x: x.assign(Certainty=x['Certainty'] + offset * x.groupby('Certainty').cumcount()))
