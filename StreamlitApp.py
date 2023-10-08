@@ -51,7 +51,7 @@ point_groupOne = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 1
 ).properties(
     width=500,
     height=600,
-).interactive()
+)
 
 point_groupTwo = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 2']).mark_circle(size=60).encode(
     x=alt.X('Impact', scale=alt.Scale(zero=False), axis=x_axis),
@@ -69,10 +69,10 @@ point_groupThree = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group
 ).properties(
     width=500,
     height=600,
-).interactive()
+)
 
 # Create the scatter plot with padding
-scatter_plot1 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 1']).mark_text(size=15, opacity=1.0, color='white').encode(
+scatter_plot1 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 1']).mark_text(size=15, opacity=1.0, color='white', dy=15).encode(
     x=alt.X('Impact', title='Impact', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
     y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
     text='Indikator:N'
@@ -80,10 +80,10 @@ scatter_plot1 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 1'
     width=500,
     height=600,
     title=alt.TitleParams(text='0 - 5 Jahre', align='center', anchor='middle', fontSize=16)
-).interactive()
+)
 
 
-scatter_plot2 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 2']).mark_text(size=15, opacity=1.0, color='white').encode(
+scatter_plot2 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 2']).mark_text(size=15, opacity=1.0, color='white', dy=15).encode(
     x=alt.X('Impact', scale=alt.Scale(zero=False), axis=x_axis),
     y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis),
     text='Indikator:N'
@@ -91,9 +91,9 @@ scatter_plot2 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 2'
     width=500,
     height=600,
     title=alt.TitleParams(text='5 - 10 Jahre', align='center', anchor='middle', fontSize=16)
-).interactive()
+)
 
-scatter_plot3 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 3']).mark_text(size=15, opacity=1.0, color='white').encode(
+scatter_plot3 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 3']).mark_text(size=15, opacity=1.0, color='white', dy=15).encode(
     x=alt.X('Impact', scale=alt.Scale(zero=False), axis=x_axis),
     y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis),
     text='Indikator:N'
@@ -101,7 +101,7 @@ scatter_plot3 = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 3'
     width=500,
     height=600,
     title=alt.TitleParams(text='10 - 15 Jahre', align='center', anchor='middle', fontSize=16)
-).interactive()
+)
 
 # Link the zoom and movement of all three plots
 
