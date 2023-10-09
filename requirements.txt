@@ -1,5 +1,4 @@
 pandas
 streamlit
 openpyxl
-streamlit_echarts
-st_echarts
+streamlit-echarts>=0.4.0
