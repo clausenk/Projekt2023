@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from PIL import Image
-#from streamlit_echarts import st_echarts
+from streamlit_echarts import st_echarts
 
 
 # Define the x and y axes
