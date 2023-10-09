@@ -2,3 +2,4 @@ pandas
 streamlit
 openpyxl
 streamlit_echarts
+st_echarts
