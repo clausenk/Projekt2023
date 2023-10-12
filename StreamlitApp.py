@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from PIL import Image
-from streamlit_echarts import st_echarts
+import altDarstellungen as ad
 
 # Define Session States
 if 'text_marks_visible' not in st.session_state:
@@ -49,6 +49,14 @@ subset_df = subset_df.dropna(subset=['Certainty', 'Impact'])
 subset_df_original = df[['Indikator', 'Kategorie', 'STEEP-Kategorie', 'Certainty', 'Impact', 'Prognose Group']]
 subset_df_original = subset_df_original.dropna(subset=['Certainty', 'Impact'])
 
+point_plot_all = ad.plotAllCertaintyImpact(subset_df_original, symbol_size, x_axis, y_axis_with_labels, megatrend_symbol, megatrend_color, chart_width, chart_height)
+point_plot_all_over_time = ad.plotAllOverTimeImpact(subset_df_original, symbol_size, x_axis, y_axis_with_labels, megatrend_symbol, megatrend_color, chart_width, chart_height)
+point_plot_all_over_time_certainty = ad.plotAllOverTimeCertainty(subset_df_original, symbol_size, x_axis, y_axis_with_labels, megatrend_symbol, megatrend_color, chart_width, chart_height)
+point_plot_all_combined = alt.hconcat(point_plot_all, point_plot_all_over_time, point_plot_all_over_time_certainty)
+st.altair_chart(point_plot_all_combined)
+
+point_plot_STEEP = ad.plotAllSteepOverTime(subset_df_original, symbol_size, x_axis, y_axis_with_labels, megatrend_symbol, megatrend_color, chart_width, chart_height)
+st.altair_chart(point_plot_STEEP)
 
 df['impact_bin'] = (df['Impact'] // 1)
 df['certainty_bin'] = (df['Certainty'] // 1)
@@ -64,7 +72,6 @@ heatmap = alt.Chart(heatmap_data).mark_rect().encode(
     height=400,
     title="Heatmap basierend auf Impact und Certainty"
 )
-
 
 # Filter the data based on the selected STEEP-Kategorie
 if st.session_state.steep_category != 'Alle':
