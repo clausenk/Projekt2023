@@ -17,7 +17,7 @@ y_axis = alt.Axis(title=None, grid=True, labels=False)
 y_axis_with_labels = alt.Axis(title='Certainty', grid=True)
 
 # Load the Excel file
-df = pd.read_excel('indikatoren_modified_1010.xlsx')
+df = pd.read_excel('indikatoren_1310.xlsx')
 #Page configuration
 st.set_page_config(layout='wide')
 st.title('Prognose der Indikatoren')
