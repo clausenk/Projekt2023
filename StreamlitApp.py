@@ -17,7 +17,9 @@ y_axis = alt.Axis(title=None, grid=True, labels=False)
 y_axis_with_labels = alt.Axis(title='Certainty', grid=True)
 
 # Load the Excel file
-df = pd.read_excel('indikatoren_1310.xlsx')
+df = pd.read_excel('indikatoren.xlsx')
+
+
 #Page configuration
 st.set_page_config(layout='wide')
 st.title('Prognose der Indikatoren')
@@ -79,8 +81,8 @@ if st.session_state.steep_category != 'Alle':
     subset_df_original = subset_df_original.loc[subset_df_original['STEEP-Kategorie'] == st.session_state.steep_category]
 
 point_groupOne_megatrends = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 1') & (subset_df['Kategorie'] == 'Megatrend')]).mark_point(size=symbol_size).encode(
-    x=alt.X('Impact', scale=alt.Scale(domain=(0, 5)), axis=x_axis),
-    y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis_with_labels),
+    x=alt.X('Impact', scale=alt.Scale(domain=(0, 7)), axis=x_axis),
+    y=alt.Y('Certainty', scale=alt.Scale(domain=(0, 7)), axis=y_axis_with_labels),
     tooltip=['Indikator', 'Kategorie', 'STEEP-Kategorie', 'Certainty', 'Impact', 'Prognose Group'],
     shape=alt.value(megatrend_symbol),
     color=alt.value(megatrend_color)
@@ -235,8 +237,8 @@ scatterplots_zeitraumThree = point_groupThree_megatrends + point_groupThree_tren
 
 # Create the scatter plots with text labels or without text labels based on the toggle button
 if st.session_state.text_marks_visible == True:
-    scatter_plot1_text = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 1']).mark_text(size=15, opacity=1.0, color='white', dy=15).encode(
-        x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(-4, 4)), axis=alt.Axis(format='~')),
+    scatter_plot1_text_signal = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 1') & (subset_df['Kategorie'] == 'Signal') ]).mark_text(size=15, opacity=1.0, color=signal_color, dy=15).encode(
+        x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=alt.Axis(format='~')),
         y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
         text='Indikator:N'
     ).properties(
@@ -244,24 +246,113 @@ if st.session_state.text_marks_visible == True:
         height=400,
         title=alt.TitleParams(text='0 - 5 Jahre', align='center', anchor='middle', fontSize=16)
     )
-    scatter_plot2_text = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 2']).mark_text(size=15, opacity=1.0, color='white', dy=15).encode(
-        x=alt.X('Impact', scale=alt.Scale(domain=(-4, 4)), axis=x_axis),
-        y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis),
+    scatter_plot1_text_trend = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 1') & (subset_df['Kategorie'] == 'Trend') ]).mark_text(size=15, opacity=1.0, color=trend_color, dy=15).encode(
+        x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=alt.Axis(format='~')),
+        y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
+        text='Indikator:N'
+    ).properties(
+        width=400,
+        height=400,
+        title=alt.TitleParams(text='0 - 5 Jahre', align='center', anchor='middle', fontSize=16)
+    )
+    scatter_plot1_text_treiber = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 1') & (subset_df['Kategorie'] == 'Treiber') ]).mark_text(size=15, opacity=1.0, color=treiber_color, dy=15).encode(
+        x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=alt.Axis(format='~')),
+        y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
+        text='Indikator:N'
+    ).properties(
+        width=400,
+        height=400,
+        title=alt.TitleParams(text='0 - 5 Jahre', align='center', anchor='middle', fontSize=16)
+    )
+    scatter_plot1_text_schwachessignal = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 1') & (subset_df['Kategorie'] == 'Schwaches Signal') ]).mark_text(size=15, opacity=1.0, color=schwachessignal_color, dy=15).encode(
+        x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=alt.Axis(format='~')),
+        y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
+        text='Indikator:N'
+    ).properties(
+        width=400,
+        height=400,
+        title=alt.TitleParams(text='0 - 5 Jahre', align='center', anchor='middle', fontSize=16)
+    )
+
+    scatter_plot1_text = scatter_plot1_text_signal + scatter_plot1_text_trend + scatter_plot1_text_treiber + scatter_plot1_text_schwachessignal
+
+    scatter_plot2_text_signal = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 2') & (subset_df['Kategorie'] == 'Signal') ]).mark_text(size=15, opacity=1.0, color=signal_color, dy=15).encode(
+        x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=alt.Axis(format='~')),
+        y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
         text='Indikator:N'
     ).properties(
         width=400,
         height=400,
         title=alt.TitleParams(text='5 - 10 Jahre', align='center', anchor='middle', fontSize=16)
     )
-    scatter_plot3_text = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 3']).mark_text(size=15, opacity=1.0, color='white', dy=15).encode(
-    x=alt.X('Impact', scale=alt.Scale(domain=(-4, 4)), axis=x_axis),
-    y=alt.Y('Certainty', scale=alt.Scale(zero=False), axis=y_axis),
-    text='Indikator:N'
-).properties(
-    width=400,
-    height=400,
-    title=alt.TitleParams(text='10 - 15+ Jahre', align='center', anchor='middle', fontSize=16)
-)
+    scatter_plot2_text_trend = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 2') & (subset_df['Kategorie'] == 'Trend') ]).mark_text(size=15, opacity=1.0, color=trend_color, dy=15).encode(
+        x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=alt.Axis(format='~')),
+        y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
+        text='Indikator:N'
+    ).properties(
+        width=400,
+        height=400,
+        title=alt.TitleParams(text='5 - 10 Jahre', align='center', anchor='middle', fontSize=16)
+    )
+    scatter_plot2_text_treiber = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 2') & (subset_df['Kategorie'] == 'Treiber') ]).mark_text(size=15, opacity=1.0, color=treiber_color, dy=15).encode(
+        x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=alt.Axis(format='~')),
+        y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
+        text='Indikator:N'
+    ).properties(
+        width=400,
+        height=400,
+        title=alt.TitleParams(text='5 - 10 Jahre', align='center', anchor='middle', fontSize=16)
+    )
+    scatter_plot2_text_schwachessignal = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 2') & (subset_df['Kategorie'] == 'Schwaches Signal') ]).mark_text(size=15, opacity=1.0, color=schwachessignal_color, dy=15).encode(
+        x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=alt.Axis(format='~')),
+        y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=alt.Axis(format='~')),
+        text='Indikator:N'
+    ).properties(
+        width=400,
+        height=400,
+        title=alt.TitleParams(text='5 - 10 Jahre', align='center', anchor='middle', fontSize=16)
+    )
+
+    scatter_plot2_text = scatter_plot2_text_signal + scatter_plot2_text_trend + scatter_plot2_text_treiber + scatter_plot2_text_schwachessignal
+
+    scatter_plot3_text_signal = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 3') & (subset_df['Kategorie'] == 'Signal') ]).mark_text(size=15, opacity=1.0, color=signal_color, dy=15).encode(
+        x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=x_axis),
+        y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=y_axis),
+        text='Indikator:N'
+    ).properties(
+        width=400,
+        height=400,
+        title=alt.TitleParams(text='10 - 15+ Jahre', align='center', anchor='middle', fontSize=16)
+    )
+    scatter_plot3_text_trend = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 3') & (subset_df['Kategorie'] == 'Trend') ]).mark_text(size=15, opacity=1.0, color=trend_color, dy=15).encode(
+        x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=x_axis),
+        y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=y_axis),
+        text='Indikator:N'
+    ).properties(
+        width=400,
+        height=400,
+        title=alt.TitleParams(text='10 - 15+ Jahre', align='center', anchor='middle', fontSize=16)
+    )
+    scatter_plot3_text_treiber = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 3') & (subset_df['Kategorie'] == 'Treiber') ]).mark_text(size=15, opacity=1.0, color=treiber_color, dy=15).encode(
+        x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=x_axis),
+        y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=y_axis),
+        text='Indikator:N'
+    ).properties(
+        width=400,
+        height=400,
+        title=alt.TitleParams(text='10 - 15+ Jahre', align='center', anchor='middle', fontSize=16)
+    )
+    scatter_plot3_text_schwachessignal = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 3') & (subset_df['Kategorie'] == 'Schwaches Signal') ]).mark_text(size=15, opacity=1.0, color=schwachessignal_color, dy=15).encode(
+        x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=x_axis),
+        y=alt.Y('Certainty', title='Certainty', scale=alt.Scale(zero=False), axis=y_axis),
+        text='Indikator:N'
+    ).properties(
+        width=400,
+        height=400,
+        title=alt.TitleParams(text='10 - 15+ Jahre', align='center', anchor='middle', fontSize=16)
+    )
+
+    scatter_plot3_text = scatter_plot3_text_signal + scatter_plot3_text_trend + scatter_plot3_text_treiber + scatter_plot3_text_schwachessignal
 else:
     scatter_plot1_text = alt.Chart(subset_df.loc[subset_df['Prognose Group'] == 'Group 1']).mark_text(size=15, opacity=1.0, color='white', dy=15).encode(
         x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=alt.Axis(format='~')),
