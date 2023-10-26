@@ -2,3 +2,4 @@ pandas
 streamlit
 openpyxl
 streamlit-echarts>=0.4.0
+plotly
