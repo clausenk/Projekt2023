@@ -10,7 +10,7 @@ if 'text_marks_visible' not in st.session_state:
 if 'steep_category' not in st.session_state:
     st.session_state.steep_category = 'Alle'
 
-# Define Multipage App
+
 
 
 
@@ -21,6 +21,10 @@ y_axis_with_labels = alt.Axis(title='Certainty', grid=True)
 
 # Load the Excel file
 df = pd.read_excel('indikatoren.xlsx')
+
+trend_rows = df['Kategorie'] == 'Trend'
+df = df.drop(index=set(df.index) - set(trend_rows.index))
+
 
 
 #Page configuration
@@ -118,7 +122,7 @@ scatter_plot1_text_signal = alt.Chart(subset_df.loc[(subset_df['Prognose Group']
 ).properties(
     width=1920,
     height=1080,
-    title=alt.TitleParams(text='5 - 10 Jahre', align='center', anchor='middle', fontSize=16)
+    title=alt.TitleParams(text='0 - 5 Jahre', align='center', anchor='middle', fontSize=16)
 )
 scatter_plot1_text_trend = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 1') & (subset_df['Kategorie'] == 'Trend') ]).mark_text(size=15, opacity=1.0, color=trend_color, dy=-15).encode(
     x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=alt.Axis(format='~')),
@@ -127,7 +131,7 @@ scatter_plot1_text_trend = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] 
 ).properties(
     width=1920,
     height=1080,
-    title=alt.TitleParams(text='5 - 10 Jahre', align='center', anchor='middle', fontSize=16)
+    title=alt.TitleParams(text='0 - 5 Jahre', align='center', anchor='middle', fontSize=16)
 )
 scatter_plot1_text_treiber = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 1') & (subset_df['Kategorie'] == 'Treiber') ]).mark_text(size=15, opacity=1.0, color=treiber_color, dy=-15).encode(
     x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=alt.Axis(format='~')),
@@ -136,7 +140,7 @@ scatter_plot1_text_treiber = alt.Chart(subset_df.loc[(subset_df['Prognose Group'
 ).properties(
     width=1920,
     height=1080,
-    title=alt.TitleParams(text='5 - 10 Jahre', align='center', anchor='middle', fontSize=16)
+    title=alt.TitleParams(text='0 - 5 Jahre', align='center', anchor='middle', fontSize=16)
 )
 scatter_plot1_text_schwachessignal = alt.Chart(subset_df.loc[(subset_df['Prognose Group'] == 'Group 1') & (subset_df['Kategorie'] == 'Schwaches Signal') ]).mark_text(size=15, opacity=1.0, color=schwachessignal_color, dy=-15).encode(
     x=alt.X('Impact', title='Impact', scale=alt.Scale(domain=(0, 5)), axis=alt.Axis(format='~')),
@@ -145,11 +149,12 @@ scatter_plot1_text_schwachessignal = alt.Chart(subset_df.loc[(subset_df['Prognos
 ).properties(
     width=1920,
     height=1080,
-    title=alt.TitleParams(text='5 - 10 Jahre', align='center', anchor='middle', fontSize=16)
+    title=alt.TitleParams(text='0 - 5 Jahre', align='center', anchor='middle', fontSize=16)
 )
 
 scatter_plot1_text = scatter_plot1_text_signal + scatter_plot1_text_trend + scatter_plot1_text_treiber + scatter_plot1_text_schwachessignal
 
 
-scatterplot = scatter_plot1_text + scatterplots_darstellung
+
+scatterplot = scatter_plot1_text_treiber + scatterplots_darstellung
 st.altair_chart(scatterplot, use_container_width=False)

@@ -151,5 +151,5 @@ scatter_plot1_text_schwachessignal = alt.Chart(subset_df.loc[(subset_df['Prognos
 scatter_plot1_text = scatter_plot1_text_signal + scatter_plot1_text_trend + scatter_plot1_text_treiber + scatter_plot1_text_schwachessignal
 
 
-scatterplot = scatter_plot1_text + scatterplots_darstellung
+scatterplot = scatter_plot1_text_treiber + scatterplots_darstellung
 st.altair_chart(scatterplot, use_container_width=False)
