@@ -53,6 +53,8 @@ subset_df = subset_df.dropna(subset=['Certainty', 'Impact'])
 subset_df_original = df[['Indikator', 'Kategorie', 'STEEP-Kategorie', 'Certainty', 'Impact', 'Prognose Group']]
 subset_df_original = subset_df_original.dropna(subset=['Certainty', 'Impact'])
 
+
+"""
 #Change Prognose Group 1, 2, 3 on X Axis to 0 - 5, 5 - 10, 10 - 15
 subset_df['Prognose Group'] = subset_df['Prognose Group'].replace({'Group 1': '0 - 5', 'Group 2': '5 - 10', 'Group 3': '10 - 15'})
 
@@ -89,10 +91,14 @@ def neues_intervallfifteen(x):
         return x
     
 subset_df['Zeit'] = subset_df['Zeit'].apply(neues_intervallfifteen)
-    
-st.table(subset_df)
 
-bubble_plot = alt.Chart((subset_df.loc[(subset_df['Kategorie'] == 'Treiber')])).mark_point().encode(
+"""
+
+slidervalue = st.slider('slider', min_value=2, max_value=17, step=1, value=2)
+
+
+
+bubble_plot = alt.Chart((subset_df.loc[(subset_df['Kategorie'] == 'Treiber')])).mark_square().encode(
     x=alt.X('Zeit'),
     y=alt.Y('Certainty'),
     size = alt.Size('Impact'),
@@ -100,7 +106,7 @@ bubble_plot = alt.Chart((subset_df.loc[(subset_df['Kategorie'] == 'Treiber')])).
     tooltip=['Indikator', 'Kategorie', 'STEEP-Kategorie', 'Certainty', 'Impact', 'Prognose Group'],
     text = 'Indikator:Q'
 ).properties(
-    width=2300,
+    width=1920,
     height=1080,
 ).interactive()
 
@@ -109,18 +115,66 @@ bubble_plot_text = alt.Chart((subset_df.loc[(subset_df['Kategorie'] == 'Treiber'
     align='left',
     baseline='middle',
     dx=14,
-    fontSize=18,
+    fontSize=10,
     fontWeight=500,
+    opacity=0.3
 ).encode(
     x=alt.X('Zeit'),
     y=alt.Y('Certainty'),
     text='Indikator',
     color= alt.Color('STEEP-Kategorie')
 ).properties(
-    width=2300,
+    width=1920,
     height=1080,
 ).interactive()
 
-bubble_plot = bubble_plot + bubble_plot_text
+bubble_plot_trend = alt.Chart((subset_df.loc[(subset_df['Kategorie'] == 'Trend') & ((subset_df['Zeit'] >= slidervalue - 1) & (subset_df['Zeit'] <= slidervalue + 1))])).mark_circle().encode(
+    x=alt.X('Zeit'),
+    y=alt.Y('Certainty'),
+    size = alt.Size('Impact'),
+    #color = alt.Color('STEEP-Kategorie'),
+    color = alt.value('white'),
+    tooltip=['Indikator', 'Kategorie', 'STEEP-Kategorie', 'Certainty', 'Impact', 'Prognose Group'],
+    text = 'Indikator:Q'
+).properties(
+    width=1920,
+    height=1080,
+).interactive()
+
+bubble_plot_trend_text = alt.Chart((subset_df.loc[(subset_df['Kategorie'] == 'Trend') & ((subset_df['Zeit'] >= slidervalue - 1) & (subset_df['Zeit'] <= slidervalue + 1))])).mark_text().encode(
+    x=alt.X('Zeit'),
+    y=alt.Y('Certainty'),
+    #set the color to white
+    color = alt.value('white'),
+    tooltip=['Indikator', 'Kategorie', 'STEEP-Kategorie', 'Certainty', 'Impact', 'Prognose Group'],
+    text = 'Indikator'
+).properties(
+    width=1920,
+    height=1080,
+).interactive()
+
+line_plot = alt.Chart((subset_df.loc[(subset_df['Kategorie'] == 'Trend') & ((subset_df['Zeit'] >= slidervalue - 1) & (subset_df['Zeit'] <= slidervalue + 1))])).mark_line(color= 'red').encode(
+    x=alt.X('Zeit'),
+    y=alt.value(0),
+    strokeWidth=alt.value(10),
+    color=alt.value('red')
+)
+
+bubble_plot = bubble_plot + bubble_plot_text + bubble_plot_trend + bubble_plot_trend_text + line_plot
+
+#Add Button that lets me download the current chart as a xls file
+def convert_df(df):
+   return df.to_csv(index=False).encode('utf-8')
+
+csv = convert_df(subset_df)
+
+st.download_button(
+   "Press to Download",
+   csv,
+   "file.csv",
+   "text/csv",
+   key='download-csv'
+)
+
 
 st.altair_chart(bubble_plot, use_container_width=False)

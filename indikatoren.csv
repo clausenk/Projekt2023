@@ -1,0 +1,261 @@
+Indikator,Kategorie,STEEP-Kategorie,Certainty,Impact,Prognose Group,Zeit
+Population,Treiber,Social,5.0,3.0,10 - 15,15.320818503521483
+Migration von Fachkräften,Treiber,Political,4.0,4.0,10 - 15,16.552120652508975
+Education & Labor ,Treiber,Economical,4.84896045985252,1.0,10 - 15,13.238204469242422
+Veränderung von Wertevorstellungen ,Treiber,Social,3.827871939729382,2.0,10 - 15,12.203087880447677
+Veränderung von geopolitischen Strukturen ,Treiber,Political,3.0,3.115864114228379,10 - 15,15.996198926125551
+Future Of Democracy ,Treiber,Political,2.712253131189851,3.053871895803448,10 - 15,15.612777649414188
+Climate Change & Pollution ,Treiber,Environmental,4.725158588832659,5.0,5 - 10,10.933108643296693
+Biodiversity declining,Treiber,Environmental,5.029742288563411,2.042228756666189,0 - 5,5.8055829465585855
+Resources & Raw Materials ,Treiber,Social,4.750936652211437,3.014373806588329,10 - 15,15.168745577406913
+Global Trade & Value Chains ,Treiber,Political,3.005778475218154,5.077540818908892,10 - 15,14.556918028772294
+Power Shifts ,Treiber,Political,2.0,4.904609758325144,10 - 15,14.28959315579623
+Energy Transformation ,Treiber,Technological,3.780913108802634,4.925861931692449,10 - 15,14.731635121976694
+Debt Challenge ,Treiber,Political,3.12787463929081,2.91469059440071,10 - 15,15.720722419210196
+Innovationsdruck,Treiber,Technological,3.850616908885255,3.915672888107722,5 - 10,8.532618344031402
+Frontier Technologies ,Treiber,Technological,4.177180202345173,4.787377460925054,5 - 10,9.43755473707575
+Humans & Machines ,Treiber,Social,2.063886312539009,3.917748802758073,10 - 15,12.548974263515897
+Healthcare of the Future ,Treiber,Political,2.951662685554847,3.05451118802436,5 - 10,7.700988056589942
+Caregiving ,Treiber,Political,3.724768053111587,2.015509498786546,5 - 10,7.541260267012221
+3D Printing in Supply Chains,Signal,Technological,3.992777755870354,2.153336091303039,10 - 15,15.219887437991751
+Negative impacts from human-caused climate change,Signal,Environmental,2.816251585663604,4.936563037271737,5 - 10,8.913657359136218
+Breaking up Tech Giants,Schwaches Signal,Political,1.0,2.730940120171494,10 - 15,13.507988767156961
+Remote-Arbeit ,Trend,Economical,2.967898179222304,2.242696913191741,0 - 5,2.4957336831581145
+Urbanisierung,Treiber,Economical,4.210029657340753,2.178770504784249,5 - 10,10.677358589226548
+Post-Wachstums-Regionen,Signal,Social,3.292796835655845,4.151279056437194,5 - 10,9.86453452314965
+Mental Health,Trend,Social,3.943976344803649,4.238827720172979,0 - 5,4.355823912294322
+Gen Z Aktivismus (Klima)	,Signal,Environmental,3.071898184933618,3.186319590595727,0 - 5,6.461744246611559
+Lebenslanges Lernen,Trend,Economical,5.183920303652286,1.912278553858379,0 - 5,6.957439979958965
+Intermodale Städte,Schwaches Signal,Political,3.148223143814056,3.903466488323913,10 - 15,12.048927228812628
+Digital Smart Citys,Schwaches Signal,Technological,3.121557144902304,4.240009880768101,10 - 15,14.445957439436095
+Kollaborative Stadt,Schwaches Signal,Social,3.118839549646006,4.933808314599661,5 - 10,8.54515534428144
+Demografischer Wandel	,Treiber,Economical,5.227423379221758,4.141629846954039,10 - 15,16.75614021309896
+Familienstrukturen,Signal,Social,3.205980253329276,2.209378691399439,0 - 5,3.6383606020506325
+Post-Konsumismus,Schwaches Signal,Social,2.144276614592528,1.869686066817756,10 - 15,15.529880218053489
+Gemeinschaftsorientierte Wohnmodelle,Signal,Social,2.739367866426663,2.131742034977662,0 - 5,4.594449529945576
+Privatsphäre 2.0 (Datenschutz),Treiber,Political,4.123967118479547,5.070231234424319,5 - 10,10.153526644830905
+Digitale Ethik	,Schwaches Signal,Social,5.119815320932058,-1.0,5 - 10,9.966282806559816
+Digitale Entfremdung	,Schwaches Signal,Social,1.798250089404644,1.812571190399112,0 - 5,5.252924547022913
+Lokalismus,Signal,Social,3.047589693813634,1.894960010190359,0 - 5,5.95409241518979
+Transhumanismus	,Schwaches Signal,Technological,3.003983695195595,5.297810701010056,10 - 15,14.919299922746006
+Geschlechterfluidität,Trend,Social,4.918315252244099,3.017501003912848,0 - 5,6.59594460540325
+Neue Bildungsmodelle	,Signal,Social,2.136358872960809,1.262498093367105,0 - 5,5.769975425912871
+Digitale Ermüdung,Schwaches Signal,Social,4.270927310780665,3.006613106509326,0 - 5,4.405287968686368
+Gesellschaftliche Polarisierung,Trend,Political,4.268093272135468,4.281587231127592,0 - 5,6.703728592753777
+Ernährungsbewusstsein,Trend,Environmental,3.009178895767942,2.038346140339456,0 - 5,4.888649015717015
+Graswurzelbewegungen,Signal,Political,3.033244363683414,3.183081748931757,5 - 10,8.153977804553131
+Rückbesinnung auf die Natur,Trend,Environmental,1.828173690729232,1.936463037289451,0 - 5,6.42991249107086
+Ethische Konsumentscheidungen,Signal,Environmental,1.719770615875792,3.15536436508225,0 - 5,3.9907089934301143
+Digital-Natives	,Treiber,Technological,4.90232961299825,2.111361241151276,0 - 5,5.859552432227831
+Mieten statt kaufen,Trend,Economical,5.244888726561362,3.845410172908867,0 - 5,2.9109014103400774
+Erweiterte Realität im Alltag,Schwaches Signal,Technological,4.800474044856406,3.22387565801299,5 - 10,10.536800300244154
+Globalisierung,Treiber,Social,5.039649907660187,5.174435952300612,0 - 5,4.4215155364167265
+Neue Mobilitätsformen,Trend,Social,3.977843931088791,2.974723029341846,5 - 10,10.108520499174222
+Sinkende Arbeitslosigkeit,Trend,Economical,5.155101124994817,3.115809066755064,5 - 10,10.143117622601144
+Anstieg der Bruttolöhne,Trend,Social,5.05635286096606,3.902930682404402,5 - 10,11.996649319635667
+Altersarmut steigt an,Trend,Social,5.100069958057039,2.710981797381504,5 - 10,11.622745957025149
+Bevölkerungszuwachs in Ballungszentren (Jüngere),Trend,Social,4.929002014611159,2.89885513205025,0 - 5,6.617800416847393
+Bevölkerungszuwachs im Städteumland (Familien/ Ältere),Trend,Social,5.126434069766799,2.718799782554263,0 - 5,6.379879256739031
+Anstieg Wohnkostenbelastung,Trend,Social,5.085549016901545,4.192629538265546,0 - 5,2.248272171598878
+Energiesicherheit (Klimawandel),Trend,Technological,3.123085111682176,4.8165592903765,10 - 15,15.048053930230997
+Wirtschaftliche und Gesellschaftliche Entwicklung,Schwaches Signal,Economical,4.72830235664301,3.088069363829697,5 - 10,11.890458669821287
+Flexible Speicherung von Energie,Trend,Technological,5.283039779148074,4.29191224570647,5 - 10,8.49767396032392
+E-Mobilität und Arbeitsmarkt,Trend,Economical,2.875021296676926,1.80231466927085,5 - 10,8.733478667846514
+Stadtwerke als wichtige Säule in der Energiewende,Trend,Technological,4.852388554287145,1.043183515568724,5 - 10,7.118841707556387
+Gessellschaftliche Anforderung an den Arbeitsmarkt,Trend,Economical,3.299646774030669,4.255697383866258,5 - 10,8.986419376116068
+Klimaneutrale Industrie,Trend,Economical,2.899553560135696,4.878106460012967,10 - 15,12.285705851319989
+E-Mobilität (as service),Trend,Technological,4.132890744652873,3.270304325914615,0 - 5,5.7091664369941135
+Klimneutralität,Trend,Technological,5.052897466834994,0.8993071497214924,5 - 10,11.194925289630657
+Increase in energy consumtion ,Treiber,Economical,5.089468557078748,3.978698051895312,0 - 5,4.354849970451791
+Reducing CO2 emmision,Signal,Environmental,4.789975871947826,1.273624243030691,5 - 10,8.852351924029692
+Price increase for fossil energy,Trend,Political,5.244094861383475,3.245471501434626,0 - 5,4.534087544420109
+consumtion of energy by buildings,Treiber,Economical,5.104887119424284,3.092906617635214,0 - 5,5.358942123224416
+jobs in reneable enegry market,Signal,Social,3.274781951381025,2.857269337877379,5 - 10,11.192252824693465
+"New Social and Economic
+Models",Trend,Social,4.238819451218055,4.287093646728333,10 - 15,14.280301532736285
+Industrial Transformation,Treiber,Economical,4.166766824436339,4.080016134608766,0 - 5,6.03569697542718
+Quality of Life,Trend,Environmental,1.9029736418257,1.840849040084193,0 - 5,4.130465932449563
+Climate Change,Treiber,Environmental,4.001904537311817,3.968140190607471,10 - 15,14.357734799216889
+Umfangreicher Einsatz von Wasserstoff,Trend,Economical,2.870366794086349,4.809719234557382,10 - 15,13.314511255219388
+Einsatz von Wasserstoffflugzeugen,Signal,Economical,1.862269627173092,1.167403738278303,10 - 15,14.618120171767737
+Brennstoffzellenoptimierung für H2,Signal,Economical,3.028988709344014,2.963638327556994,5 - 10,9.478897387526192
+Elektrolyseverfahren zur Energiegewinnung,Signal,Economical,1.899156481460451,4.134774747250036,10 - 15,16.411890682533315
+Elektrolyse-Felder produzieren grünen Wasserstoff,Trend,Technological,3.801811758874317,1.724283243421823,0 - 5,6.925207421191781
+Umwandlung CO2 zu nutzbarer Energie,Trend,Technological,2.216230141487308,3.910423893639472,10 - 15,14.391563927748418
+Speicherung von Energie durch Wasserstoffspeicher,Trend,Technological,2.741342730325695,3.862587353344574,5 - 10,10.997294478506749
+Vollendung Offshore-Großprojekt in Dänemark,Signal,Technological,4.047646284534268,2.048330153696881,5 - 10,7.576183584159839
+Wasserstoffanlagen-Cluster,Signal,Technological,3.242416112184627,4.194135088513034,10 - 15,14.090935673855801
+Wasserstofftankstellen in die Infrastruktur Tokios integriert,Signal,Economical,3.284170122738003,2.000608861822733,5 - 10,7.786170599271162
+Graphenbatterien,Schwaches Signal,Technological,0.8167038710229124,4.23672315694878,10 - 15,15.959500903037569
+Weltweite vollumfängliche Einführung von Blockchain,Trend,Technological,3.024635815556552,3.947202494340695,5 - 10,10.794111000617951
+Urban Mining,Trend,Environmental,2.252361985671233,0.8016093646776246,0 - 5,3.59850233210555
+Incel Movement,Schwaches Signal,Social,2.975882227807185,0.8941741931601468,0 - 5,3.327610139951588
+vehicle battery costs are expected to decline ,Trend,Economical,5.256643864145725,3.773525389207685,5 - 10,8.003888325552815
+US Battery electric vehicles provide significant cost savings compared to gasoline cars,Trend,Social,4.062954899616335,2.897501194437279,5 - 10,9.816390185964789
+natural gas remains a needed power source ,Treiber,Economical,4.990068996387503,5.005254342115758,5 - 10,11.323098600020161
+Germany is expected to become a power importer by mid 2020,Treiber,Economical,3.960028975301044,3.931852220064397,0 - 5,5.189003495959753
+phaseout of coal and nuclear assets,Trend,Political,4.027275154951485,4.909732057674693,0 - 5,3.7337124997624005
+Uncertaincy if pace of renewables roll out will be sufficient,Treiber,Economical,3.740785361893652,4.151824810774742,0 - 5,3.3435302673161815
+"Risks to people, economies and infrastructures due to coastal and inland flooding ",Trend,Environmental,4.175151719857918,1.116904712257387,5 - 10,11.815993267614498
+Stress and mortality to people due to increasing temperatures and heat extremes,Trend,Environmental,4.025724935820065,2.920222595118664,5 - 10,9.965055814563199
+Marine and terrestrial ecosystems disruptions,Trend,Environmental,4.190558749812774,0.7955303392533961,5 - 10,8.81337003075123
+Water scarcity to multiple interconnected sectors,Trend,Environmental,4.244517821865425,4.01060210508903,5 - 10,9.26495888841108
+"Losses in crop production, due to compound heat and dry conditions, and extreme weather",Trend,Environmental,3.90270222156489,1.217472299219944,5 - 10,8.565679763569458
+Artificial Forest for Co² Capture,Schwaches Signal,Environmental,1.73426634137833,1.77809317868594,10 - 15,15.140022464079182
+Using Wood-decay Fungi to increase Biodiversity,Schwaches Signal,Environmental,1.071514463533751,0.9529934076382993,10 - 15,13.58928268630533
+Environmental Impacts of Synthetic Biology,Schwaches Signal,Environmental,2.079630915650901,0.9730976762874808,10 - 15,13.700199702472585
+Therapeutic Parks,Schwaches Signal,Social,1.712118213030308,1.088629977678828,5 - 10,8.465461259557891
+Anbau im Wandel - Lokale Produktionen,Trend,Environmental,2.810180536562532,1.974840368898113,0 - 5,4.219593312721006
+Digitization of Supply Chains,Trend,Technological,5.081915457994085,4.224681513350752,0 - 5,2.417543143129817
+Modular Wohnen und bauen ,Schwaches Signal,Economical,2.248416420315433,1.866368212797049,0 - 5,6.351548448673829
+Wasserstoffökonomie,Trend,Technological,1.911688881198883,4.957628189920105,5 - 10,9.069796617361042
+Deepfake - Digitale Produkte/Dienstleistunge,Trend,Technological,3.817574935209095,2.789468116064146,0 - 5,2.8228237800751654
+Bedingungsloses Grundeinkommen,Trend,Social,2.290546827609744,4.09695055298956,10 - 15,15.082863889632629
+Gendergerechte Medizin ,Schwaches Signal,Social,0.9314340544104343,1.204721101771994,10 - 15,14.496682725114923
+Künstliche Intelligenz,Treiber,Political,4.79001743694297,4.969396357034683,5 - 10,7.846217648200317
+2D Materialien in der Halbleiterindustrie (Graphen),Signal,Technological,3.143459008843783,2.06473224806983,10 - 15,15.942451920193303
+Klimabedingte Migration ,Treiber,Political,5.252639362637193,2.027514508978324,0 - 5,6.314111478043131
+Veränderung der Einstellung gegenüber Arbeit (WL-Balance),Treiber,Social,3.86316144186531,4.112552042088869,0 - 5,2.950416210425493
+Sensemaking Economy - Ich Arbeite für die Vision nicht das Geld,Trend,Social,1.780069748462413,1.723079139874803,0 - 5,4.613594724687294
+Tiefseebergbau (Pfui),Signal,Environmental,2.773282862605789,1.205280176346249,5 - 10,10.446297960243637
+Quantifizierte Geselschaft,Signal,Economical,3.268294089888648,1.85726349850458,0 - 5,4.91341261507379
+3D Druck im Bau,Signal,Technological,2.064443465390886,1.937465584971752,10 - 15,16.015880551892455
+Selbstoptimierung & Longevity,Schwaches Signal,Social,2.883855039734852,1.240807262521614,10 - 15,13.945206408808417
+Neuralink,Signal,Technological,2.265038636410255,5.018967266897853,10 - 15,14.319952424238451
+Bargeldlose Gesellschaft,Trend,Economical,4.08471988591317,0.8993169468850208,0 - 5,3.5472516160863665
+Wege zur Kühlung der Welt,Signal,Environmental,2.702872408083988,2.13934309594446,10 - 15,16.599228055277653
+Stadtplanung & Mental Health ,Schwaches Signal,Social,3.109109123656956,2.016909911792235,5 - 10,9.03317782038739
+Autofreie Stadt ,Trend,Environmental,2.788634012937366,2.782217347890831,5 - 10,7.074350249670595
+Das 6. Kondratieff,Signal,Economical,3.045589218272127,4.713499194901799,5 - 10,11.36256962850036
+Energy Harvesting,Signal,Technological,1.940574955566293,1.796025815469036,10 - 15,15.405108340095872
+Windkraft AWE Systems,Signal,Environmental,2.875143753780744,2.160636516152497,5 - 10,10.570448916694072
+Abwasser zur Ressourcenquelle,Signal,Environmental,2.953059960279159,1.735487746679141,5 - 10,11.609741782260553
+Weltraumenergie ,Signal,Technological,1.059933376597238,1.154503905173008,10 - 15,13.189937650561752
+Datenspeicherung mittels DNS 106,Schwaches Signal,Technological,0.811788527923965,1.245409868205539,10 - 15,16.235368398324944
+Individueller CO2 Ausstoß,Signal,Environmental,3.135218573773549,3.722932724342643,0 - 5,4.75867794241633
+Smart Toilet ,Schwaches Signal,Technological,2.295390157339132,1.014393318887976,10 - 15,15.235578285552064
+From Toilet use to Virtual Currency,Schwaches Signal,Technological,0.9614535034013534,0.7502927681788676,10 - 15,15.169225005046947
+Biodiesel vom Bratfett,Schwaches Signal,Environmental,1.239901705866098,1.053672074492953,5 - 10,9.916212935296084
+Ikea is a Power Company (Aldi?),Schwaches Signal,Technological,4.267431289164095,3.193134863033098,0 - 5,2.77717860913972
+"Going to Work with a ""smile"" China",Schwaches Signal,Social,3.082507309935195,1.09092655455547,0 - 5,5.108837668254333
+Artificial Intelligence Monitors Concentration ,Schwaches Signal,Technological,0.8118405922623662,2.787043747199041,10 - 15,15.55029366912503
+Supervisor Monitors your Productivity Scores,Schwaches Signal,Technological,0.877352223743015,2.743085923742545,5 - 10,9.532674962898218
+Künstliche Intelligenz (KI),Treiber,Technological,4.719177905744712,5.255499159476452,0 - 5,6.6788332140131095
+Internet der Dinge (IoT),Trend,Technological,4.026195363811538,1.988390918690656,0 - 5,4.6397546286263065
+Blockchain-Technologie,Treiber,Technological,2.721139520749207,0.9847976119154938,5 - 10,9.186403403541346
+5G-Netzwerke,Treiber,Technological,4.971182382710425,2.965008077427006,0 - 5,2.675693441127774
+Biotechnologie und Gentechnik,Treiber,Technological,3.745060387411279,0.7210727245239561,5 - 10,7.179045035552332
+Nachhaltige Technologien,Treiber,Technological,3.733495979676186,3.85362229405239,5 - 10,8.23133627357516
+Autonome Fahrzeuge,Treiber,Technological,4.986391127538059,2.804238815448635,5 - 10,10.781515843308139
+Robotik und Automatisierung,Trend,Technological,4.852811962591975,4.080501648252178,0 - 5,6.001360620706032
+Quantencomputing,Signal,Technological,3.19753511295739,2.125276526915892,10 - 15,13.067340754480352
+Cybersecurity und Datenschutz,Treiber,Technological,4.837074625331907,2.777926523837216,0 - 5,3.6548021145277874
+Drohnen und autonome Fluggeräte,Trend,Technological,3.73493883301352,1.889428294490503,0 - 5,6.542831936811851
+Smart Homes,Trend,Technological,4.179444731835921,4.98073249104961,0 - 5,3.014612467302258
+Wearable Technologie,Trend,Technological,4.916912358338582,3.223879220181692,0 - 5,3.9600339290096174
+Biometrie und Authentifizierungstechnologien,Trend,Technological,1.963542142672679,1.136351097869359,5 - 10,10.710316877503356
+Cloud Computing und Edge Computing,Trend,Technological,5.118989598629776,2.770982825016249,0 - 5,3.4658376849026205
+Genomik und personalisierte Medizin,Schwaches Signal,Technological,0.8727909932418746,1.209683892735811,10 - 15,14.441882495646288
+Elektronische Zahlungssysteme und digitale Währungen,Treiber,Technological,5.072717892129098,3.121546815912207,0 - 5,6.72002137454371
+3D-Druck und additive Fertigung,Trend,Technological,3.725200901189341,1.993842175846421,0 - 5,3.5277978173681435
+Nanotechnologie und Materialwissenschaften,Signal,Technological,2.150180631656945,2.73323632785234,10 - 15,16.534336769680074
+Spracherkennung und natürliche Sprachverarbeitung,Trend,Technological,5.255731078816543,3.080111928599185,0 - 5,2.407956322562935
+Erneuerbare Energien und Energiespeicherung,Treiber,Technological,4.034347328474362,4.117603178265454,0 - 5,5.1954580018222245
+Big Data und Datenanalyse,Treiber,Technological,5.099148164735141,4.052980358876616,5 - 10,11.635288823819426
+Intelligente Landwirtschaft und Präzisionslandwirtschaft,Signal,Technological,2.863056499089008,1.718560925378487,0 - 5,6.695187085666685
+Virtuelle Assistenten und Chatbots,Trend,Technological,5.246712861678526,4.877770021043544,0 - 5,3.3251610894388643
+Echtzeitübersetzung und Sprachtechnologie,Trend,Technological,4.242690063271663,1.143860196657802,0 - 5,3.544485287619386
+Roboter-assistierte Chirurgie und medizinische Geräte,Trend,Technological,4.847179592545292,1.011928054889587,0 - 5,3.043589647002105
+Elektronische Haut und tragbare Sensoren,Schwaches Signal,Technological,1.965753434093777,0.8918191812417704,10 - 15,12.444079023274995
+Autonome Liefer- und Logistiksysteme,Schwaches Signal,Technological,2.77015415468107,3.790253994067892,10 - 15,16.98601049039277
+Augmented Reality im Bildungswesen und Training.Virtuelle und erweiterte Realität.  ,Signal,Technological,2.202296488660122,1.980719794080926,5 - 10,10.21821810230144
+Starke Sektorenkopplung (Elekritfizierung),Signal,Technological,2.924342637004255,3.913559944475766,10 - 15,12.754332325120167
+Bedarf an E-Fuels,Signal,Technological,1.902310676851375,2.852042560026621,10 - 15,14.015236721319011
+Bau von Schwammstädten,Signal,Environmental,2.266605025202483,1.170166726477279,0 - 5,2.5095812391514403
+Bau von vertical garden cities,Signal,Environmental,3.202815123350216,1.287033149523658,0 - 5,5.8190599383645
+Übergang von Diesel LKW zu Zero-Emission-LKW,Trend,Technological,3.727835341405585,3.728119848553188,5 - 10,7.840581860785944
+Sinken der Gesamtbetriebskosten von ZE-LKW,Trend,Economical,4.240015185048293,2.76918512758382,0 - 5,6.095821088702945
+Einsatz von DAC (Direct Air Capture) Verfahren,Schwaches Signal,Environmental,1.800422321223091,1.29842874642901,0 - 5,6.690274128264681
+Einsatz von Chemischen Geoengineering ,Schwaches Signal,Environmental,0.7983578438233123,0.8922321934977206,0 - 5,3.185022937006101
+Schwellenländer als neue Absatzmärkte (Textilsektor),Trend,Economical,3.840100251088507,0.7242767100829794,5 - 10,11.349216602578714
+China wird dominanter im technischen Textil Bereich (Raumfahrt),Signal,Economical,3.743112165244949,1.130103725250168,5 - 10,8.689266770049118
+Verändertes Wettbewerbsumfeld (Schwellenländer),Treiber,Economical,4.985713910062958,1.976187134118544,10 - 15,14.96292209086447
+Politische Veränderung in der Gesellschaft,Treiber,Social,5.277508443885316,3.018165731275629,0 - 5,6.339901394637912
+Sozial ökonomische Entwicklung in Deutschland,Treiber,Social,3.756511291725747,4.266150049525131,0 - 5,3.001769984516128
+Algorithm wanted to replace members of parliament,Schwaches Signal,Political,2.248297559336559,3.841056188400837,10 - 15,13.245307763118447
+Web3.0,Treiber,Technological,4.736984432778191,3.198515845039119,0 - 5,5.201019469160732
+Metaverse,Trend,Technological,4.844771242932753,0.7513357665558663,0 - 5,5.589511191874867
+Wachstum von Wohlstand in Europa,Trend,Political,3.196421288657806,2.956198706034515,0 - 5,3.373510483938128
+Smart Heat Pumps,Signal,Technological,4.016961128551593,4.233861486890201,5 - 10,9.998187034315055
+Industry 5.0,Treiber,Technological,4.704375733414606,5.034945809324447,5 - 10,11.875907874291334
+Beyond Moore´s Law,Trend,Technological,2.933520814043225,1.790264937537364,0 - 5,6.4912418746863985
+Low-Code-/No-Code Plattformen,Trend,Technological,5.193288069250745,3.787620461432663,0 - 5,6.408208615241546
+Environmental Social Governace,Trend,Economical,3.109560345085207,3.239414674325427,0 - 5,2.6651739904757594
+Sand Battery,Schwaches Signal,Technological,2.118243458907598,3.749044062158991,10 - 15,15.672563283634975
+Digitale Inklusion und Technologiezugang,Trend,Technological,3.838313187807288,2.210025676452623,0 - 5,4.308328718506694
+Soziale Gerechtigkeit und Rassismus,Trend,Social,4.190007116543392,3.172626467525201,0 - 5,2.8699382513876714
+Gendergerechtigkeit und Frauenrechte,Trend,Social,3.772777536386281,2.710684631364054,0 - 5,4.644073029118429
+Klimagerechtigkeit und Umweltschutz,Trend,Environmental,3.831453168573529,2.11391413628239,0 - 5,3.8696582863505284
+Globale Migrationsfragen und Flüchtlingsrechte,Trend,Social,2.14365972242094,0.7362831909872652,0 - 5,2.4713414481373785
+Zunehmende Bedeutung von E-Learning und Online-Bildung,Trend,Technological,4.879866089922282,3.292488335630224,0 - 5,3.025078242755712
+KI-gestützte Bildung,Trend,Technological,4.968069760815393,5.126744061795832,0 - 5,3.1328779764879933
+Bildung für nachhaltige Entwicklung (BNE),Trend,Social,2.708377520256277,2.171311684745866,0 - 5,5.8567028244524755
+Grenzüberschreitende Bildung,Trend,Social,3.20216959305773,2.233349974843247,0 - 5,2.1313537401898794
+Arbeitsplatzsicherheit in Zeiten der Unsicherheit,Trend,Economical,3.097778256909963,4.244940038116711,0 - 5,3.1456353352129622
+Beschleunigung von Forschung und Entwicklung (F&E),Trend,Economical,5.132571548670913,3.857997344067216,0 - 5,6.226719248261123
+Kooperation und offene Innovation,Trend,Technological,2.169608183431877,2.725959568326231,0 - 5,6.840464447164686
+Künstliche Intelligenz und Automatisierung in der Forschung,Schwaches Signal,Technological,4.747566162851902,0.8637618502279862,0 - 5,5.869801842857759
+Förderung von Schlüsseltechnologien,Trend,Technological,4.801496135319221,2.035976745078942,0 - 5,6.720983906426499
+Nachhaltige Innovation,Trend,Economical,3.010078746796704,4.219289581246404,0 - 5,3.563700828071383
+Erweiterte Realität (AR) und Virtual Reality (VR) in der Bildung,Trend,Technological,2.045750916424845,4.15009400137427,0 - 5,5.037524464176703
+KI für personalisiertes Lernen und medizinische Diagnosen,Signal,Technological,4.940781851255268,0.7431149368618566,0 - 5,2.3338189209833113
+Telemedizin und Fernüberwachung im Gesundheitswesen,Schwaches Signal,Technological,4.943364082805813,0.76951716704186,0 - 5,3.8146608373669264
+Blockchain für sichere Gesundheitsdaten,Schwaches Signal,Technological,2.883942521743172,1.193987393976814,0 - 5,2.515582830424705
+Digitale Schulungs- und Gesundheits-Apps,Signal,Technological,3.800030722671031,1.264305148399787,0 - 5,3.8944944080470454
+Wasseraufbereitungstechnologien,Signal,Technological,2.974344604373156,3.191097391958294,0 - 5,4.089254240059173
+Wassermanagement und -politik,Trend,Political,2.865573485179691,4.992107637322168,0 - 5,4.255407698875348
+Wasserüberwachung und -sensorik,Trend,Technological,5.141448029381723,3.711773472134633,0 - 5,6.129786070361428
+Nachhaltige Wasserressourcennutzung,Trend,Environmental,3.125801359564647,2.769841499130246,0 - 5,3.9592400363837252
+Nachhaltige Landwirtschaft und Landnutzung,Trend,Environmental,2.80664015012086,2.181858284931746,0 - 5,4.55723643892658
+Luftqualitätsüberwachung und Sensortechnologie,Trend,Technological,4.882143929622778,0.9983868372186673,0 - 5,6.672981535546095
+Umweltgesetzgebung und -politik,Trend,Political,3.250002676813468,3.990847497680441,0 - 5,2.0452304370777656
+Zunahme von Ransomware-Angriffen,Trend,Technological,5.250186964008283,4.988224804168588,0 - 5,3.6001787670397767
+IoT-Bedrohungen,Trend,Technological,4.1430332583875,5.29965656909591,0 - 5,5.743634140949593
+KI und Machine Learning steigert Effizienz von Cyberangriffen,Trend,Technological,4.909689795325177,4.162608766106207,0 - 5,5.6824115733265455
+Verschärfte Reaktionen bei Datenschutzverletzungen,Trend,Social,5.236341924062,3.752309545834259,0 - 5,4.562318103373672
+Nationen und Geopolitik in der Cybersecurity,Trend,Political,4.141660278691111,3.751388240143315,0 - 5,4.809703351604055
+Ausbau der Solarenergie,Trend,Technological,4.750120377661488,5.066523122986032,0 - 5,3.005937263152198
+Windenergie auf See (Offshore-Wind),Trend,Technological,3.735188767163399,2.841908611277858,0 - 5,6.535669099091252
+Elektrifizierung und grüne Wasserstoffproduktion,Trend,Environmental,4.069898773709728,1.159403975290872,0 - 5,6.935011020831518
+Netzausbau,Trend,Technological,4.939741575978423,4.717116841835192,0 - 5,6.939676465896503
+Pandemie-Vorbereitung und -Planung,Trend,Economical,1.813709354700541,3.854787768272711,5 - 10,11.205561045138616
+Gesundheitsdaten und Contact Tracing,Signal,Technological,2.782280563819508,1.004674156507897,0 - 5,2.8985500008079708
+Impfstoffentwicklung und -verteilung,Trend,Technological,4.788739720848739,1.281435256075591,0 - 5,5.334121529873029
+Gesundheitssystemresilienz und -anpassung,Trend,Economical,2.220207009051017,2.005336069524834,5 - 10,9.722133891110124
+Regulierung und Datenschutz,Trend,Political,4.129812515207912,4.766521271909352,0 - 5,2.766347495473304
+Klimabewusstsein und Technologie,Trend,Environmental,3.14202419938856,0.7463862213610788,0 - 5,4.164999461769543
+Soziale Innovation und Bürgerbeteiligung,Trend,Social,3.238993457325596,1.702109645789295,5 - 10,10.727362684093414
+Digitale Diplomatie,Trend,Political,2.982069739492179,2.243500272184854,0 - 5,4.672264015184255
+Multilaterale Zusammenarbeit,Trend,Political,3.292374178869523,1.98552952102565,0 - 5,5.340185111421647
+Klimadiplomatie,Schwaches Signal,Environmental,3.105564343775151,3.098512995772373,0 - 5,3.6352980553051477
+Handelsabkommen und Wirtschaftsdiplomatie,Trend,Economical,4.740819426967373,3.806100733366542,0 - 5,4.977156052557555
+Diplomatie in Zeiten von Krisen,Trend,Political,3.928808527247717,1.784878887812883,0 - 5,3.3406894668404434
+Einkommensungleichheit und Pandemieeffekte,Trend,Economical,4.232908904022181,4.043120273525079,0 - 5,5.913651602371846
+Digitale Spaltung,Trend,Social,4.036880747908594,2.129812355259777,0 - 5,6.874292527716925
+Gesundheitsversorgung und soziale Sicherheit,Trend,Social,3.861594615899868,1.713725460887866,0 - 5,5.859561112983521
+Nachhaltige Entwicklungsziele (SDGs),Trend,Political,2.857542341184264,2.936144686267782,0 - 5,6.031347139669429
+Bezahlbarer Wohnraum,Trend,Political,4.223002999713634,1.24191379847663,0 - 5,3.5263122883658093
+Nachhaltiges Bauen und grüner Wohnraum,Trend,Environmental,4.891782693892398,3.153936142847085,0 - 5,6.52460080074013
+Digitale Plattformen und Wohnungsmarkt,Trend,Economical,3.255987813502319,1.89092542458359,0 - 5,3.330075847466297
+Pflanzliche Ernährung und Fleischersatzprodukte,Trend,Economical,3.267089059546958,0.8597175282495195,0 - 5,6.645862350564051
+Nachhaltigkeit und Kreislaufwirtschaft,Trend,Environmental,2.885770774366396,0.7447605049511508,0 - 5,5.9744723658327725
+Alternative Proteine,Trend,Environmental,3.29438034981257,1.851926497908831,0 - 5,4.788329706214466
+Lebensmitteltechnologie und 3D-Druck,Trend,Technological,1.910012153220295,1.029372119256805,5 - 10,10.003395407497024
+Gemeinschaftliche Verbindungen und soziale Integration,Trend,Social,3.127523482430915,3.011434954833252,5 - 10,11.198996113697094
+Umweltbewusstsein und Nachhaltigkeit,Trend,Environmental,3.123808540716333,3.004741008870699,0 - 5,6.5387190956260115
+Technologische Unterstützung und Smart Cities,Trend,Technological,3.999006983135799,0.9041656727902265,0 - 5,6.593639779569316
+Erweiterte Kreislaufwirtschaftsmodelle,Trend,Economical,2.755994229343083,1.284376560930587,0 - 5,3.100009089628173
+Digitalisierung zur Ressourceneffizienz,Trend,Technological,4.811699036553319,4.11915997315467,0 - 5,4.499917771682938
+Nachhaltige Beschaffung und Lieferketten,Trend,Political,3.944771916752923,2.85729954850274,0 - 5,4.613515490199109
+Wasser- und Energieeffizienz,Trend,Economical,4.008127943880541,4.787691246939962,0 - 5,2.473546879164183
+Gesetzliche und regulatorische Maßnahmen,Trend,Political,4.090007502980799,4.128624020798672,0 - 5,6.320578637395524
