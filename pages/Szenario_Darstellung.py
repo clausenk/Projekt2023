@@ -124,6 +124,63 @@ szenario_treiber_text = alt.Chart(seleceted_column.loc[(seleceted_column['Katego
     height=1080,
 ).interactive()
 
+szenario_trend = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Trend')]).mark_point(size=150).encode(
+    x=alt.X('Zeit', scale=alt.Scale(domain=(0, 18))),
+    y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
+    size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
+    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit'],
+    shape=alt.value(trend_symbol),
+    color=alt.value(trend_color)
+).properties(
+    width=1920,
+    height=1080,
+).interactive()
+szenario_trend_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Trend')]).mark_text(
+    align='left',
+    baseline='middle',
+    dx=14,
+    fontSize=10,
+    fontWeight=500,
+).encode(
+    x=alt.X('Zeit'),
+    y=alt.Y('Certainty_y'),
+    text='Indikator',
+    color=alt.value(trend_color),
+).properties(
+    width=1920,
+    height=1080,
+).interactive()
+szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Signal')]).mark_text(
+    align='left',
+    baseline='middle',
+    dx=14,
+    fontSize=10,
+    fontWeight=500,
+).encode(
+    x=alt.X('Zeit'),
+    y=alt.Y('Certainty_y'),
+    text='Indikator',
+    color=alt.value(signal_color),
+).properties(
+    width=1920,
+    height=1080,
+).interactive()
+szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Schwaches Signal')]).mark_text(
+    align='left',
+    baseline='middle',
+    dx=14,
+    fontSize=10,
+    fontWeight=500,
+).encode(
+    x=alt.X('Zeit'),
+    y=alt.Y('Certainty_y'),
+    text='Indikator',
+    color=alt.value(schwachessignal_color),
+).properties(
+    width=1920,
+    height=1080,
+).interactive()
+
 szenario_line = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Treiber')]).mark_line(color= 'red', opacity=0.3).encode(
     x=alt.X('Zeit'),
     y=alt.Y('Certainty_y'),
@@ -132,7 +189,15 @@ szenario_line = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] 
     height=1080,
 ).interactive()
 
-szenario_chart = backgroundData + szenario_treiber + szenario_treiber_text + szenario_line
+szenario_line_trend = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Trend')]).mark_line(color= 'pink', opacity=0.7).encode(
+    x=alt.X('Zeit'),
+    y=alt.Y('Certainty_y'),
+).properties(
+    width=1920,
+    height=1080,
+).interactive()
+
+szenario_chart = backgroundData + szenario_treiber + szenario_treiber_text + szenario_trend + szenario_trend_text + szenario_line + szenario_line_trend
 
 st.altair_chart(szenario_chart, use_container_width=False)
 

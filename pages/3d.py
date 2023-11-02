@@ -24,7 +24,7 @@ df = pd.read_excel('indikatoren.xlsx')
 
 #Page configuration
 st.set_page_config(layout='wide')
-st.title('Prognose der Indikatoren')
+st.title('Treiber Würfel')
 col1, col2 = st.columns([4, 1])
 
 st.sidebar.title('Navigation')

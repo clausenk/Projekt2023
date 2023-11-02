@@ -44,6 +44,13 @@ symbol_size = 90
 text_marks_visible = True
 steep_category = 'Alle'
 
+# Add checkboxes to select the Steep Categories
+st.checkbox('Soziales', value=False, key='Social')
+st.checkbox('Technologie', value=False, key='Technological')
+st.checkbox('Ökologie', value=False, key='Environmental')
+st.checkbox('Ökonomie', value=False, key='Economical')
+st.checkbox('Politik', value=False, key='Political')
+
 
 # Add a small offset to the Certainty values of the data points that have the same value
 offset = 0.07
