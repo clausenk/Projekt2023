@@ -43,7 +43,7 @@ symbol_size = 90
 text_marks_visible = True
 steep_category = 'Alle'
 
-col1, col2, col3, col4, col5 = st.columns(5)
+col1, col2, col3, col4, col5 = st.columns([0.1 , 0.1, 0.1, 0.1, 0.1])
 
 # Add checkboxes to select the Steep Categories
 with col1:
@@ -129,7 +129,7 @@ df_selected_indicators_SteepTimeKategorie = df_selected_indicators_SteepTime[df_
 
 #Create Background Chart
 chart_treiber_background = alt.Chart((df_SzenarioMerged.loc[(df_SzenarioMerged['Kategorie_x'] == 'Treiber')])).mark_point(size=symbol_size, opacity=0.1).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale)),
+    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
@@ -141,7 +141,7 @@ chart_treiber_background = alt.Chart((df_SzenarioMerged.loc[(df_SzenarioMerged['
 ).interactive()
 
 chart_trend_background = alt.Chart((df_SzenarioMerged.loc[(df_SzenarioMerged['Kategorie_x'] == 'Trend')])).mark_point(size=symbol_size, opacity=0.1).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale)),
+    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
@@ -153,7 +153,7 @@ chart_trend_background = alt.Chart((df_SzenarioMerged.loc[(df_SzenarioMerged['Ka
 ).interactive()
 
 chart_signal_background = alt.Chart((df_SzenarioMerged.loc[(df_SzenarioMerged['Kategorie_x'] == 'Signal')])).mark_point(size=symbol_size, opacity=0.1).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale)),
+    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
@@ -165,7 +165,7 @@ chart_signal_background = alt.Chart((df_SzenarioMerged.loc[(df_SzenarioMerged['K
 ).interactive()
 
 chart_schwachessignal_background = alt.Chart((df_SzenarioMerged.loc[(df_SzenarioMerged['Kategorie_x'] == 'Schwaches Signal')])).mark_point(size=symbol_size, opacity=0.1).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale)),
+    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
@@ -179,7 +179,7 @@ chart_schwachessignal_background = alt.Chart((df_SzenarioMerged.loc[(df_Szenario
 background = chart_treiber_background + chart_trend_background + chart_signal_background + chart_schwachessignal_background
 
 chart_treiber = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_selected_indicators_SteepTimeKategorie['Kategorie_x'] == 'Treiber')]).mark_point(size=symbol_size).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale)),
+    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
@@ -197,7 +197,7 @@ chart_treiber_text = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df
     fontSize=10,
     fontWeight=500,
 ).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale)),
+    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     text='Indikator',
     color=alt.value(treiber_color)
@@ -207,7 +207,7 @@ chart_treiber_text = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df
 ).interactive()
 
 chart_trend = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_selected_indicators_SteepTimeKategorie['Kategorie_x'] == 'Trend')]).mark_point(size=symbol_size).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale)),
+    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
@@ -225,7 +225,7 @@ chart_trend_text = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_s
     fontSize=10,
     fontWeight=500,
 ).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale)),
+    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     text='Indikator',
     color=alt.value(trend_color)
@@ -235,7 +235,7 @@ chart_trend_text = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_s
 ).interactive()
 
 chart_signal = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_selected_indicators_SteepTimeKategorie['Kategorie_x'] == 'Signal')]).mark_point(size=symbol_size).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale)),
+    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
@@ -253,7 +253,7 @@ chart_signal_text = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_
     fontSize=10,
     fontWeight=500,
 ).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale)),
+    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     text='Indikator',
     color=alt.value(signal_color)
@@ -263,7 +263,7 @@ chart_signal_text = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_
 ).interactive()
 
 chart_schwachessignal = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_selected_indicators_SteepTimeKategorie['Kategorie_x'] == 'Schwaches Signal')]).mark_point(size=symbol_size).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale)),
+    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
@@ -281,7 +281,7 @@ chart_schwachessignal_text = alt.Chart(df_selected_indicators_SteepTimeKategorie
     fontSize=10,
     fontWeight=500,
 ).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale)),
+    x=alt.X('Zeit', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     text='Indikator',
     color=alt.value(schwachessignal_color)
