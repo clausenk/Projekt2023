@@ -5,6 +5,8 @@ from PIL import Image
 import altDarstellungen as ad
 import numpy as np
 
+st.write(pd.__version__)
+
 # Define Session States
 if 'text_marks_visible' not in st.session_state:
     st.session_state.text_marks_visible = True
