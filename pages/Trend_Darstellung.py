@@ -5,8 +5,6 @@ from PIL import Image
 import altDarstellungen as ad
 import numpy as np
 
-st.write(pd.__version__)
-
 # Define Session States
 if 'text_marks_visible' not in st.session_state:
     st.session_state.text_marks_visible = True
@@ -46,6 +44,8 @@ text_marks_visible = True
 steep_category = 'Alle'
 
 col1, col2, col3, col4, col5 = st.columns([0.1 , 0.1, 0.1, 0.1, 0.1])
+
+st.write(pd.__version__)
 
 # Add checkboxes to select the Steep Categories
 with col1:
