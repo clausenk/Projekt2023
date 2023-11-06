@@ -75,6 +75,7 @@ with col2:
 with col3:
     group_three_checkbox = st.checkbox(' 13 - 17 Jahre', value=True, key='Group 3')
 
+
 df_TrendlisteZeit = pd.read_excel('indikatoren_timeRandomized.xlsx')
 df_trendliste = pd.read_excel('indikatoren.xlsx')
 

@@ -112,7 +112,7 @@ szenario_treiber_text = alt.Chart(seleceted_column.loc[(seleceted_column['Katego
     align='left',
     baseline='middle',
     dx=14,
-    fontSize=10,
+    fontSize=14,
     fontWeight=500,
 ).encode(
     x=alt.X('Zeit'),
@@ -139,7 +139,7 @@ szenario_trend_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategori
     align='left',
     baseline='middle',
     dx=14,
-    fontSize=10,
+    fontSize=14,
     fontWeight=500,
 ).encode(
     x=alt.X('Zeit'),
@@ -154,7 +154,7 @@ szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategor
     align='left',
     baseline='middle',
     dx=14,
-    fontSize=10,
+    fontSize=14,
     fontWeight=500,
 ).encode(
     x=alt.X('Zeit'),
@@ -169,7 +169,7 @@ szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategor
     align='left',
     baseline='middle',
     dx=14,
-    fontSize=10,
+    fontSize=14,
     fontWeight=500,
 ).encode(
     x=alt.X('Zeit'),
@@ -181,7 +181,7 @@ szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategor
     height=1080,
 ).interactive()
 
-szenario_line = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Treiber')]).mark_line(color= 'red', opacity=0.3).encode(
+szenario_line = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Treiber')]).mark_line(color= treiber_color, opacity=0.3).encode(
     x=alt.X('Zeit'),
     y=alt.Y('Certainty_y'),
 ).properties(
@@ -189,7 +189,23 @@ szenario_line = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] 
     height=1080,
 ).interactive()
 
-szenario_line_trend = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Trend')]).mark_line(color= 'pink', opacity=0.7).encode(
+szenario_line_trend = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Trend')]).mark_line(color= trend_color, opacity=0.3).encode(
+    x=alt.X('Zeit'),
+    y=alt.Y('Certainty_y'),
+).properties(
+    width=1920,
+    height=1080,
+).interactive()
+
+szenario_line_signal = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Trend')]).mark_line(color= signal_color, opacity=0.3).encode(
+    x=alt.X('Zeit'),
+    y=alt.Y('Certainty_y'),
+).properties(
+    width=1920,
+    height=1080,
+).interactive()
+
+szenario_line_schwachessignal = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Trend')]).mark_line(color= schwachessignal_color, opacity=0.3).encode(
     x=alt.X('Zeit'),
     y=alt.Y('Certainty_y'),
 ).properties(
