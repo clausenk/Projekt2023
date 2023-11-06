@@ -1,4 +1,4 @@
-pandas
+pandas>=1.4.4
 streamlit
 openpyxl
 streamlit-echarts>=0.4.0

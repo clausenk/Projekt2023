@@ -91,7 +91,7 @@ df_selected_time = pd.DataFrame()
 
 # Add the selected indicators to the dataframe based on the checkboxes
 if treiber_checkbox == True:
-    df_selected_indicators = df_selected_indicators.concat(df_SzenarioMerged.loc[(df_SzenarioMerged['Kategorie_x'] == 'Treiber')])
+    df_selected_indicators = df_selected_indicators.append(df_SzenarioMerged.loc[(df_SzenarioMerged['Kategorie_x'] == 'Treiber')])
 if trend_checkbox == True:
     df_selected_indicators = df_selected_indicators.append(df_SzenarioMerged.loc[(df_SzenarioMerged['Kategorie_x'] == 'Trend')])
 if signal_checkbox == True:
