@@ -132,6 +132,7 @@ szenario_treiber_text = alt.Chart(seleceted_column.loc[(seleceted_column['Katego
     x=alt.X('Zeit_x'),
     y=alt.Y('Certainty_y'),
     text='Kurzindikator',
+    tooltip=['Indikator', szenarioCreator],
     color=alt.value(treiber_color),
 ).properties(
     width=1920,
@@ -159,6 +160,7 @@ szenario_trend_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategori
     x=alt.X('Zeit_x'),
     y=alt.Y('Certainty_y'),
     text='Kurzindikator',
+    tooltip=['Indikator', szenarioCreator],
     color=alt.value(trend_color),
 ).properties(
     width=1920,
@@ -174,6 +176,7 @@ szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategor
     x=alt.X('Zeit_x'),
     y=alt.Y('Certainty_y'),
     text='Kurzindikator',
+    tooltip=['Indikator', szenarioCreator],
     color=alt.value(signal_color),
 ).properties(
     width=1920,
@@ -189,6 +192,7 @@ szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategor
     x=alt.X('Zeit_x'),
     y=alt.Y('Certainty_y'),
     text='Kurzindikator',
+    tooltip=['Indikator', szenarioCreator],
     color=alt.value(schwachessignal_color),
 ).properties(
     width=1920,

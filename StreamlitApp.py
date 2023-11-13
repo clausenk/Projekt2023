@@ -210,6 +210,7 @@ chart_treiber_text = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df
     x=alt.X('Zeit_x', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_x', scale=alt.Scale(domain=(0, 6))),
     text='Kurzindikator',
+    tooltip='Indikator',
     color=alt.value(treiber_color)
 ).properties(
     width=1920,
@@ -238,6 +239,7 @@ chart_trend_text = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_s
     x=alt.X('Zeit_x', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_x', scale=alt.Scale(domain=(0, 6))),
     text='Kurzindikator',
+    tooltip='Indikator',
     color=alt.value(trend_color)
 ).properties(
     width=1920,
@@ -266,6 +268,7 @@ chart_signal_text = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_
     x=alt.X('Zeit_x', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_x', scale=alt.Scale(domain=(0, 6))),
     text='Kurzindikator',
+    tooltip='Indikator',
     color=alt.value(signal_color)
 ).properties(
     width=1920,
@@ -294,6 +297,7 @@ chart_schwachessignal_text = alt.Chart(df_selected_indicators_SteepTimeKategorie
     x=alt.X('Zeit_x', scale=alt.Scale(domain=timeScale), axis=alt.Axis(tickMinStep=0.1)),
     y=alt.Y('Certainty_x', scale=alt.Scale(domain=(0, 6))),
     text='Kurzindikator',
+    tooltip='Indikator',
     color=alt.value(schwachessignal_color)
 ).properties(
     width=1920,
