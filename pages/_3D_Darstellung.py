@@ -52,7 +52,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(['Szenarien', 'Treiber', 'Trends', 'Signa
 df.loc[df['Impact_y'] <= 0, 'Impact_y'] = 0.1
 
 with tab1:
-    fig = px.scatter_3d(df, x='Certainty_y', y='Zeit_y', z='Impact_y', color='STEEP-Kategorie_y', width = 1000, height = 1000, size='Impact_y', opacity = 0.3, hover_data=['Kurzbeschreibung'])
+    fig = px.scatter_3d(df, x='Certainty_y', y='Zeit_y', z='Impact_y', color='STEEP-Kategorie_y', width = 1000, height = 1000, size='Impact_y', opacity = 0.3, hover_data=['Indikator', 'Kurzindikator'])
     fig.update_layout(
     )
     lineChartBox = px.line_3d(seleceted_column, x='Certainty_y', y='Zeit_y', z='Impact_y', width=1000, height=1000, text='Kurzindikator', hover_data=['Kurzbeschreibung'])
