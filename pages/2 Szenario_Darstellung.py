@@ -70,7 +70,7 @@ point_groupOne_treiber = alt.Chart(df_SzenarioWithTime.loc[(df_SzenarioWithTime[
     size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
     shape=alt.value(treiber_symbol),
-    color=alt.value(treiber_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080
@@ -81,7 +81,7 @@ point_groupOne_trend = alt.Chart(df_SzenarioWithTime.loc[(df_SzenarioWithTime['K
     size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
     shape=alt.value(trend_symbol),
-    color=alt.value(trend_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -92,7 +92,7 @@ point_groupOne_signal = alt.Chart(df_SzenarioWithTime.loc[(df_SzenarioWithTime['
     size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
     shape=alt.value(signal_symbol),
-    color=alt.value(signal_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -103,7 +103,7 @@ point_groupOne_schwachessignal = alt.Chart(df_SzenarioWithTime.loc[(df_SzenarioW
     size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
     shape=alt.value(schwachessignal_symbol),
-    color=alt.value(schwachessignal_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -117,7 +117,7 @@ szenario_treiber = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x
     size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
     shape=alt.value(treiber_symbol),
-    color=alt.value(treiber_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -133,7 +133,7 @@ szenario_treiber_text = alt.Chart(seleceted_column.loc[(seleceted_column['Katego
     y=alt.Y('Certainty_y'),
     text='Kurzindikator',
     tooltip=['Indikator', szenarioCreator],
-    color=alt.value(treiber_color),
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -145,7 +145,7 @@ szenario_trend = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x']
     size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
     shape=alt.value(trend_symbol),
-    color=alt.value(trend_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -161,7 +161,7 @@ szenario_trend_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategori
     y=alt.Y('Certainty_y'),
     text='Kurzindikator',
     tooltip=['Indikator', szenarioCreator],
-    color=alt.value(trend_color),
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -177,7 +177,7 @@ szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategor
     y=alt.Y('Certainty_y'),
     text='Kurzindikator',
     tooltip=['Indikator', szenarioCreator],
-    color=alt.value(signal_color),
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -193,7 +193,7 @@ szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategor
     y=alt.Y('Certainty_y'),
     text='Kurzindikator',
     tooltip=['Indikator', szenarioCreator],
-    color=alt.value(schwachessignal_color),
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,

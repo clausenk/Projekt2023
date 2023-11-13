@@ -43,6 +43,14 @@ symbol_size = 90
 text_marks_visible = True
 steep_category = 'Alle'
 
+
+social_color = '#1f77b4'
+tech_color = '#ff7f0e'
+environment_color = '#2ca02c'
+economical_color = '#d62728'
+politics_color = '#9467bd'
+
+
 col1, col2, col3, col4, col5 = st.columns([0.1 , 0.1, 0.1, 0.1, 0.1])
 
 st.write(pd.__version__)
@@ -144,7 +152,7 @@ chart_treiber_background = alt.Chart((df_SzenarioMerged.loc[(df_SzenarioMerged['
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
     shape=alt.value(treiber_symbol),
-    color=alt.value(treiber_color),
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -156,7 +164,7 @@ chart_trend_background = alt.Chart((df_SzenarioMerged.loc[(df_SzenarioMerged['Ka
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
     shape=alt.value(trend_symbol),
-    color=alt.value(trend_color),
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -168,7 +176,7 @@ chart_signal_background = alt.Chart((df_SzenarioMerged.loc[(df_SzenarioMerged['K
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
     shape=alt.value(signal_symbol),
-    color=alt.value(signal_color),
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -180,7 +188,7 @@ chart_schwachessignal_background = alt.Chart((df_SzenarioMerged.loc[(df_Szenario
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
     shape=alt.value(schwachessignal_symbol),
-    color=alt.value(schwachessignal_color),
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -194,7 +202,7 @@ chart_treiber = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_sele
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
     shape=alt.value(treiber_symbol),
-    color=alt.value(treiber_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -211,7 +219,7 @@ chart_treiber_text = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df
     y=alt.Y('Certainty_x', scale=alt.Scale(domain=(0, 6))),
     text='Kurzindikator',
     tooltip='Indikator',
-    color=alt.value(treiber_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -223,7 +231,7 @@ chart_trend = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_select
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
     shape=alt.value(trend_symbol),
-    color=alt.value(trend_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -240,7 +248,7 @@ chart_trend_text = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_s
     y=alt.Y('Certainty_x', scale=alt.Scale(domain=(0, 6))),
     text='Kurzindikator',
     tooltip='Indikator',
-    color=alt.value(trend_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -252,7 +260,7 @@ chart_signal = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_selec
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
     shape=alt.value(signal_symbol),
-    color=alt.value(signal_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -269,7 +277,7 @@ chart_signal_text = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[(df_
     y=alt.Y('Certainty_x', scale=alt.Scale(domain=(0, 6))),
     text='Kurzindikator',
     tooltip='Indikator',
-    color=alt.value(signal_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -281,7 +289,7 @@ chart_schwachessignal = alt.Chart(df_selected_indicators_SteepTimeKategorie.loc[
     size=alt.Size('Impact_y'),
     tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Prognose Group'],
     shape=alt.value(schwachessignal_symbol),
-    color=alt.value(schwachessignal_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
@@ -298,7 +306,7 @@ chart_schwachessignal_text = alt.Chart(df_selected_indicators_SteepTimeKategorie
     y=alt.Y('Certainty_x', scale=alt.Scale(domain=(0, 6))),
     text='Kurzindikator',
     tooltip='Indikator',
-    color=alt.value(schwachessignal_color)
+    color = "STEEP-Kategorie_x:N"
 ).properties(
     width=1920,
     height=1080,
