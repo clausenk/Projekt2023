@@ -152,7 +152,8 @@ seleceted_column = df_SzenarioWithTime[df_SzenarioWithTime[szenarioCreator].notn
 tab1, tab2 = st.tabs(['Treiber', 'Trends'])
 
 with tab1:
-    lineChartBox = px.line_3d(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Treiber')], x='Zeit', y='Certainty_y', z='Impact_y', width=1000, height=1000, hover_name='Indikator')
+    hover_text = seleceted_column['Kurzbeschreibung']
+    lineChartBox = px.line_3d(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Treiber')], x='Zeit', y='Certainty_y', z='Impact_y', width=1000, height=1000, hover_name='Indikator', hover_data=['Kurzbeschreibung'])
     fig = px.scatter_3d(df_selected_indicators.loc[(df_selected_indicators['Kategorie_x'] == 'Treiber')], x='Zeit', y='Certainty_y', z='Impact_y', color='STEEP-Kategorie_x', size='Impact_x', width=1000, height=1000, hover_name='Indikator', text='Indikator')
     fig.for_each_trace(lambda t: t.update(textfont_color=t.marker.color, textposition='top center'))
     fig.add_trace(lineChartBox.data[0])

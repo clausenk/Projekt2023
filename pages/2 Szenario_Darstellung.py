@@ -6,17 +6,17 @@ import altDarstellungen as ad
 import numpy as np
 
 # Load the Excel files
-df_Szenario = pd.read_excel('./Szenario/Trendliste.xlsx')
+df_Szenario = pd.read_excel('indikatoren.xlsx')
 df_SzenarioDescription = pd.read_excel('./Szenario/Szenario.xlsx')
 df_TrendTime = pd.read_excel('./indikatoren_timeRandomized.xlsx')
 
-column_to_copy = 'Zeit'
+column_to_copy = 'Zeit_x'
 
 df_SzenarioWithTime = pd.merge(df_Szenario, df_TrendTime, on='Indikator')
 
 #Page configuration
 st.set_page_config(layout='wide')
-st.title('Darstellung der Beta-Szenarien (Threads)')
+st.title('Darstellung Threads')
 
 # Chart configuration
 chart_width = 400
@@ -65,10 +65,10 @@ seleceted_column = df_SzenarioWithTime[szenarioCreator]
 seleceted_column = df_SzenarioWithTime[df_SzenarioWithTime[szenarioCreator].notna()]
 
 point_groupOne_treiber = alt.Chart(df_SzenarioWithTime.loc[(df_SzenarioWithTime['Kategorie_x'] == 'Treiber')]).mark_point(size=symbol_size, opacity=0.2).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=(0, 18))),
+    x=alt.X('Zeit_x', scale=alt.Scale(domain=(0, 18))),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
-    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit'],
+    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
     shape=alt.value(treiber_symbol),
     color=alt.value(treiber_color)
 ).properties(
@@ -76,10 +76,10 @@ point_groupOne_treiber = alt.Chart(df_SzenarioWithTime.loc[(df_SzenarioWithTime[
     height=1080
 ).interactive()
 point_groupOne_trend = alt.Chart(df_SzenarioWithTime.loc[(df_SzenarioWithTime['Kategorie_x'] == 'Trend')]).mark_point(size=symbol_size, opacity=0.2).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=(0, 18))),
+    x=alt.X('Zeit_x', scale=alt.Scale(domain=(0, 18))),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
-    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit'],
+    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
     shape=alt.value(trend_symbol),
     color=alt.value(trend_color)
 ).properties(
@@ -87,10 +87,10 @@ point_groupOne_trend = alt.Chart(df_SzenarioWithTime.loc[(df_SzenarioWithTime['K
     height=1080,
 ).interactive()
 point_groupOne_signal = alt.Chart(df_SzenarioWithTime.loc[(df_SzenarioWithTime['Kategorie_x'] == 'Signal')]).mark_point(size=symbol_size, opacity=0.2).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=(0, 18))),
+    x=alt.X('Zeit_x', scale=alt.Scale(domain=(0, 18))),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
-    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit'],
+    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
     shape=alt.value(signal_symbol),
     color=alt.value(signal_color)
 ).properties(
@@ -98,10 +98,10 @@ point_groupOne_signal = alt.Chart(df_SzenarioWithTime.loc[(df_SzenarioWithTime['
     height=1080,
 ).interactive()
 point_groupOne_schwachessignal = alt.Chart(df_SzenarioWithTime.loc[(df_SzenarioWithTime['Kategorie_x'] == 'Schwaches Signal')]).mark_point(size=symbol_size, opacity=0.2).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=(0, 18))),
+    x=alt.X('Zeit_x', scale=alt.Scale(domain=(0, 18))),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
-    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit'],
+    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
     shape=alt.value(schwachessignal_symbol),
     color=alt.value(schwachessignal_color)
 ).properties(
@@ -112,10 +112,10 @@ point_groupOne_schwachessignal = alt.Chart(df_SzenarioWithTime.loc[(df_SzenarioW
 backgroundData = point_groupOne_treiber + point_groupOne_trend + point_groupOne_signal + point_groupOne_schwachessignal
 
 szenario_treiber = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Treiber')]).mark_point(size=200).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=(0, 18))),
+    x=alt.X('Zeit_x', scale=alt.Scale(domain=(0, 18))),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
-    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit'],
+    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
     shape=alt.value(treiber_symbol),
     color=alt.value(treiber_color)
 ).properties(
@@ -129,9 +129,9 @@ szenario_treiber_text = alt.Chart(seleceted_column.loc[(seleceted_column['Katego
     fontSize=14,
     fontWeight=500,
 ).encode(
-    x=alt.X('Zeit'),
+    x=alt.X('Zeit_x'),
     y=alt.Y('Certainty_y'),
-    text='Indikator',
+    text='Kurzindikator',
     color=alt.value(treiber_color),
 ).properties(
     width=1920,
@@ -139,10 +139,10 @@ szenario_treiber_text = alt.Chart(seleceted_column.loc[(seleceted_column['Katego
 ).interactive()
 
 szenario_trend = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Trend')]).mark_point(size=150).encode(
-    x=alt.X('Zeit', scale=alt.Scale(domain=(0, 18))),
+    x=alt.X('Zeit_x', scale=alt.Scale(domain=(0, 18))),
     y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
     size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
-    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit'],
+    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
     shape=alt.value(trend_symbol),
     color=alt.value(trend_color)
 ).properties(
@@ -156,9 +156,9 @@ szenario_trend_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategori
     fontSize=14,
     fontWeight=500,
 ).encode(
-    x=alt.X('Zeit'),
+    x=alt.X('Zeit_x'),
     y=alt.Y('Certainty_y'),
-    text='Indikator',
+    text='Kurzindikator',
     color=alt.value(trend_color),
 ).properties(
     width=1920,
@@ -171,9 +171,9 @@ szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategor
     fontSize=14,
     fontWeight=500,
 ).encode(
-    x=alt.X('Zeit'),
+    x=alt.X('Zeit_x'),
     y=alt.Y('Certainty_y'),
-    text='Indikator',
+    text='Kurzindikator',
     color=alt.value(signal_color),
 ).properties(
     width=1920,
@@ -186,9 +186,9 @@ szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategor
     fontSize=14,
     fontWeight=500,
 ).encode(
-    x=alt.X('Zeit'),
+    x=alt.X('Zeit_x'),
     y=alt.Y('Certainty_y'),
-    text='Indikator',
+    text='Kurzindikator',
     color=alt.value(schwachessignal_color),
 ).properties(
     width=1920,
@@ -196,7 +196,7 @@ szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategor
 ).interactive()
 
 szenario_line = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Treiber')]).mark_line(color= treiber_color, opacity=0.3).encode(
-    x=alt.X('Zeit'),
+    x=alt.X('Zeit_x'),
     y=alt.Y('Certainty_y'),
 ).properties(
     width=1920,
@@ -204,7 +204,7 @@ szenario_line = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] 
 ).interactive()
 
 szenario_line_trend = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Trend')]).mark_line(color= trend_color, opacity=0.3).encode(
-    x=alt.X('Zeit'),
+    x=alt.X('Zeit_x'),
     y=alt.Y('Certainty_y'),
 ).properties(
     width=1920,
@@ -212,7 +212,7 @@ szenario_line_trend = alt.Chart(seleceted_column.loc[(seleceted_column['Kategori
 ).interactive()
 
 szenario_line_signal = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Trend')]).mark_line(color= signal_color, opacity=0.3).encode(
-    x=alt.X('Zeit'),
+    x=alt.X('Zeit_x'),
     y=alt.Y('Certainty_y'),
 ).properties(
     width=1920,
@@ -220,7 +220,7 @@ szenario_line_signal = alt.Chart(seleceted_column.loc[(seleceted_column['Kategor
 ).interactive()
 
 szenario_line_schwachessignal = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Trend')]).mark_line(color= schwachessignal_color, opacity=0.3).encode(
-    x=alt.X('Zeit'),
+    x=alt.X('Zeit_x'),
     y=alt.Y('Certainty_y'),
 ).properties(
     width=1920,
