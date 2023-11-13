@@ -109,12 +109,53 @@ if group_three_checkbox == True:
     if group_two_checkbox == False & group_one_checkbox == False:
         timeScale = (12, 18)
 
+df_Szenario = pd.read_excel('./Szenario/Trendliste.xlsx')
+df_SzenarioDescription = pd.read_excel('./Szenario/Szenario.xlsx')
+df_TrendTime = pd.read_excel('./indikatoren_timeRandomized.xlsx')
+
+column_to_copy = 'Zeit'
+
+df_SzenarioWithTime = pd.merge(df_Szenario, df_TrendTime, on='Indikator')
+
+df_SzenarioDescription = df_SzenarioDescription.dropna(subset=['Name des Scenarios'])
+
+#check if all the Szenarios have a corresponding Data in the other Excel file
+for index, row in df_SzenarioDescription.iterrows():
+    #check in the other Excel file if the Szenario is in there based on the Name of the Creator
+    if row['Name'] not in df_SzenarioWithTime.columns:
+        #if the Szenario is not in the other Excel file, delete the row from the DataFrame
+        df_SzenarioDescription.drop(index, inplace=True)
+    else:
+        #check if the Column of the Creator is empty or only contains 1 value
+        if df_SzenarioWithTime[row['Name']].isnull().all() or df_SzenarioWithTime[row['Name']].nunique() == 1:
+            #if the Column of the Creator is empty or only contains 1 value, delete the row from the DataFrame
+            df_SzenarioDescription.drop(index, inplace=True)
+
+
+# Add a Dropdown to select the Szenario
+szenario = st.selectbox('Thread (Beta)', df_SzenarioDescription['Name des Scenarios'].unique())
+#get the description of the selected Szenario and show it
+szenarioDescription = df_SzenarioDescription.loc[df_SzenarioDescription['Name des Scenarios'] == szenario, 'Kurzbeschreibung des Thread /Scenarios'].iloc[0]
+st.write(szenarioDescription)
+#get the Name of the Creator of the selected Szenario and show it
+szenarioCreator = df_SzenarioDescription.loc[df_SzenarioDescription['Name des Scenarios'] == szenario, 'Name'].iloc[0]
+
+#use the name of the Creator to get the corresponding Data from the other Excel file
+seleceted_column = df_SzenarioWithTime[szenarioCreator]
+
+#use the selected_column to get all lines from all columns where the value of the selected_column is not NaN
+seleceted_column = df_SzenarioWithTime[df_SzenarioWithTime[szenarioCreator].notna()]
+
+
+
 
 tab1, tab2 = st.tabs(['Treiber', 'Trends'])
 
 with tab1:
+    lineChartBox = px.line_3d(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Treiber')], x='Zeit', y='Certainty_y', z='Impact_y', width=1000, height=1000, hover_name='Indikator')
     fig = px.scatter_3d(df_selected_indicators.loc[(df_selected_indicators['Kategorie_x'] == 'Treiber')], x='Zeit', y='Certainty_y', z='Impact_y', color='STEEP-Kategorie_x', size='Impact_x', width=1000, height=1000, hover_name='Indikator', text='Indikator')
     fig.for_each_trace(lambda t: t.update(textfont_color=t.marker.color, textposition='top center'))
+    fig.add_trace(lineChartBox.data[0])
     st.plotly_chart(fig, use_container_width=False)
 
 with tab2:
