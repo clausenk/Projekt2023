@@ -231,7 +231,7 @@ szenario_line_schwachessignal = alt.Chart(seleceted_column.loc[(seleceted_column
     height=1080,
 ).interactive()
 
-szenario_chart = backgroundData + szenario_treiber + szenario_treiber_text + szenario_trend + szenario_trend_text + szenario_line + szenario_line_trend
+szenario_chart = backgroundData + szenario_treiber + szenario_treiber_text + szenario_trend + szenario_trend_text + szenario_line + szenario_line_trend + szenario_signal_text
 
 st.altair_chart(szenario_chart, use_container_width=False)
 
