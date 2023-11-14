@@ -12,13 +12,17 @@ df_withRandom_Values = pd.read_excel('indikatoren_timeRandomized.xlsx')
 st.set_page_config(layout='wide')
 st.title('Darstellung der Indikatoren in 3D')
 st.write('Die Kategorien in der Legende können angeklickt werden, um die Indikatoren nach Kategorien zu filtern.')
-
+keep_checkbox = st.checkbox('Nur Relevante Indikatoren', value=True, key='Keep')
 #merge dataframe with other dataframe
 df = pd.merge(df, df_withRandom_Values, on='Indikator', how='outer')
 df_SzenarioDescription = pd.read_excel('./Szenario/Szenario.xlsx')
 
 df_SzenarioDescription = df_SzenarioDescription.dropna(subset=['Name des Scenarios'])
 df_SzenarioDescription = df_SzenarioDescription.dropna(subset=['Kurzbeschreibung des Thread /Scenarios'])
+
+if keep_checkbox == True:
+    #drop all lines where the value of the column 'Keep' is 0
+    df = df[df['Keep'] != 0]
 
 #check if all the Szenarios have a corresponding Data in the other Excel file
 for index, row in df_SzenarioDescription.iterrows():
@@ -65,6 +69,7 @@ with tab1:
             size=34
         )
     )
+    lineChartBox.update_traces(marker=dict(size=0))
     fig.add_trace(lineChartBox.data[0])
     st.plotly_chart(fig, use_container_width=True)
 

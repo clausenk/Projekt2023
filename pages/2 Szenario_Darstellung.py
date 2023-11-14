@@ -17,6 +17,11 @@ df_SzenarioWithTime = pd.merge(df_Szenario, df_TrendTime, on='Indikator')
 #Page configuration
 st.set_page_config(layout='wide')
 st.title('Darstellung Threads')
+keep_checkbox = st.checkbox('Nur Relevante Indikatoren', value=True, key='Keep')
+
+if keep_checkbox == True:
+    #drop all lines where the value of the column 'Keep' is 0
+    df_SzenarioWithTime = df_SzenarioWithTime[df_SzenarioWithTime['Keep'] != 0]
 
 # Chart configuration
 chart_width = 400
