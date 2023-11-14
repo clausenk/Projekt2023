@@ -60,9 +60,10 @@ szenario = st.selectbox('Thread (Beta)', df_SzenarioDescription['Name des Scenar
 #get the description of the selected Szenario and show it
 szenarioDescription = df_SzenarioDescription.loc[df_SzenarioDescription['Name des Scenarios'] == szenario, 'Kurzbeschreibung des Thread /Scenarios'].iloc[0]
 st.write(szenarioDescription)
-st.write(df_SzenarioDescription['Name'])
+
 #get the Name of the Creator of the selected Szenario and show it
 szenarioCreator = df_SzenarioDescription.loc[df_SzenarioDescription['Name des Scenarios'] == szenario, 'Name'].iloc[0]
+st.write(szenarioCreator)
 
 #use the name of the Creator to get the corresponding Data from the other Excel file
 seleceted_column = df_SzenarioWithTime[szenarioCreator]
