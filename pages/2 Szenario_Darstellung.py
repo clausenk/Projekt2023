@@ -166,6 +166,31 @@ szenario_trend_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategori
     width=1920,
     height=1080,
 ).interactive()
+
+szenario_signal = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Signal')]).mark_point().encode(
+    x=alt.X('Zeit_x', scale=alt.Scale(domain=(0, 18))),
+    y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
+    size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
+    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
+    shape=alt.value(signal_symbol),
+    color = "STEEP-Kategorie_x:N"
+).properties(
+    width=1920,
+    height=1080,
+).interactive()
+
+szenario_schwachessignal = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Schwaches Signal')]).mark_point().encode(
+    x=alt.X('Zeit_x', scale=alt.Scale(domain=(0, 18))),
+    y=alt.Y('Certainty_y', scale=alt.Scale(domain=(0, 6))),
+    size=alt.Size('Impact_y', scale=alt.Scale(range=[0, 100])),
+    tooltip=['Indikator', 'Kategorie_x', 'STEEP-Kategorie_x', 'Certainty_x', 'Impact_x', 'Zeit_x'],
+    shape=alt.value(schwachessignal_symbol),
+    color = "STEEP-Kategorie_x:N"
+).properties(
+    width=1920,
+    height=1080,
+).interactive()
+
 szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Signal')]).mark_text(
     align='left',
     baseline='middle',
@@ -182,7 +207,7 @@ szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategor
     width=1920,
     height=1080,
 ).interactive()
-szenario_signal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Schwaches Signal')]).mark_text(
+szenario_schwachessignal_text = alt.Chart(seleceted_column.loc[(seleceted_column['Kategorie_x'] == 'Schwaches Signal')]).mark_text(
     align='left',
     baseline='middle',
     dx=14,
@@ -231,7 +256,7 @@ szenario_line_schwachessignal = alt.Chart(seleceted_column.loc[(seleceted_column
     height=1080,
 ).interactive()
 
-szenario_chart = backgroundData + szenario_treiber + szenario_treiber_text + szenario_trend + szenario_trend_text + szenario_line + szenario_line_trend + szenario_signal_text
+szenario_chart = backgroundData + szenario_treiber + szenario_treiber_text + szenario_trend + szenario_trend_text + szenario_signal + szenario_signal_text + szenario_schwachessignal + szenario_schwachessignal_text + szenario_line 
 
 st.altair_chart(szenario_chart, use_container_width=False)
 
