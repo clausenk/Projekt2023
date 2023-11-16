@@ -49,7 +49,7 @@ seleceted_column = df[szenarioCreator]
 seleceted_column = df[df[szenarioCreator].notna()]
 
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(['Szenarien', 'Treiber', 'Trends', 'Signale', 'Schwache Signale'])
+tab1, tab2, tab3, tab4 = st.tabs(['Szenarien', 'Treiber', 'Trends', 'Signale'])
 
 
 #check if all values in df ['Impact_y'] are greater than 0 and if not put them to 0.1
@@ -85,10 +85,5 @@ with tab3:
 
 with tab4:
     fig = px.scatter_3d(df.loc[(df['Kategorie_x'] == 'Signal')], x='Certainty_y', y='Zeit_y', z='Impact_y', color='STEEP-Kategorie_y', width = 1000, height = 1000, size='Impact_y', text='Kurzindikator')
-    fig.for_each_trace(lambda t: t.update(textfont_color=t.marker.color, textposition='top center'))
-    st.plotly_chart(fig, use_container_width=True)
-
-with tab4:
-    fig = px.scatter_3d(df.loc[(df['Kategorie_x'] == 'Schwaches Signal')], x='Certainty_y', y='Zeit_y', z='Impact_y', color='STEEP-Kategorie_y', width = 1000, height = 1000, size='Impact_y', text='Kurzindikator')
     fig.for_each_trace(lambda t: t.update(textfont_color=t.marker.color, textposition='top center'))
     st.plotly_chart(fig, use_container_width=True)
