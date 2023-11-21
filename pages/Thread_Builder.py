@@ -73,3 +73,12 @@ else:
     #add button to clear the DataFrame
     if st.button('Clear DataFrame', key='clearDataFrame'):
         st.session_state.dfBuilder = pd.DataFrame(columns=['Indikator', 'Kurzindikator', 'Impact', 'Certainty', 'Zeit', 'STEEP-Kategorie', 'Kategorie', 'Szenario'])
+
+    #add dropdown to select indicators to remove from the DataFrame
+    indikatorToRemove = st.selectbox('Indikator to remove', st.session_state.dfBuilder['Kurzindikator'].unique())
+    #add button to remove the selected indicator from the DataFrame
+    if st.button('Remove Indikator from DataFrame', key='removeIndikator'):
+        st.session_state.dfBuilder = st.session_state.dfBuilder[st.session_state.dfBuilder['Kurzindikator'] != indikatorToRemove]
+
+
+    
