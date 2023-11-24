@@ -73,6 +73,9 @@ with tab1:
     fig.add_trace(lineChartBox.data[0])
     st.plotly_chart(fig, use_container_width=True)
 
+
+    st.write(seleceted_column)
+
 with tab2:
     fig = px.scatter_3d(df.loc[(df['Kategorie_x'] == 'Treiber')], x='Certainty_y', y='Zeit_y', z='Impact_y', color='STEEP-Kategorie_y', width = 1000, height = 1000, size='Impact_y', text='Kurzindikator')
     fig.for_each_trace(lambda t: t.update(textfont_color=t.marker.color, textposition='top center'))
