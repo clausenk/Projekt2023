@@ -20,7 +20,6 @@ df_SzenarioDescription = pd.read_excel('./Szenario/Szenario.xlsx')
 df_SzenarioDescription = df_SzenarioDescription.dropna(subset=['Name des Scenarios'])
 df_SzenarioDescription = df_SzenarioDescription.dropna(subset=['Kurzbeschreibung des Thread /Scenarios'])
 
-st.write(df_SzenarioDescription)
 
 if keep_checkbox == True:
     #drop all lines where the value of the column 'Keep' is 0
