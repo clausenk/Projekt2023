@@ -75,8 +75,6 @@ with tab1:
     st.plotly_chart(fig, use_container_width=True)
 
     #only show the columns 'kurzindikator'
-    seleceted_column = seleceted_column[['Kurzindikator', df[szenarioCreator]]]
-
     st.write(seleceted_column)
 
 with tab2:
