@@ -74,6 +74,8 @@ with tab1:
     fig.add_trace(lineChartBox.data[0])
     st.plotly_chart(fig, use_container_width=True)
 
+    #only show the columns 'kurzindikator'
+    seleceted_column = seleceted_column[['Kurzindikator', df[szenarioCreator]]]
 
     st.write(seleceted_column)
 
