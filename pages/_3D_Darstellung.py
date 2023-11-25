@@ -75,7 +75,7 @@ with tab1:
     st.plotly_chart(fig, use_container_width=True)
 
 
-    st.write(seleceted_column)
+    st.write(seleceted_column['Kurzindikator', 'Kurzbeschreibung', df[szenarioCreator]])
 
 with tab2:
     fig = px.scatter_3d(df.loc[(df['Kategorie_x'] == 'Treiber')], x='Certainty_y', y='Zeit_y', z='Impact_y', color='STEEP-Kategorie_y', width = 1000, height = 1000, size='Impact_y', text='Kurzindikator')
