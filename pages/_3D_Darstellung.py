@@ -90,6 +90,20 @@ with tab1:
     st.write('Durchschnittliche Sicherheit: ' + str(meanCertainty))
     st.write('Durchschnittlicher Impact: ' + str(meanImpact))
 
+    #count the occurences of the values in the column 'STEEP-Kategorie_x' and show them in a bar chart
+    steepKategorie = seleceted_column['STEEP-Kategorie_x'].value_counts()
+    steepKategorie = steepKategorie.to_frame()
+    steepKategorie = steepKategorie.rename(columns={'STEEP-Kategorie_x': 'Anzahl'})
+    steepKategorie = steepKategorie.reset_index()
+    steepKategorie = steepKategorie.rename(columns={'index': 'STEEP-Kategorie'})
+    steepKategorie = steepKategorie.sort_values(by='STEEP-Kategorie')
+    steepKategorie = steepKategorie.reset_index(drop=True)
+    st.write(steepKategorie)
+    steepKategorieChart = alt.Chart(steepKategorie).mark_bar().encode(
+        x='STEEP-Kategorie',
+        y='Anzahl'
+    )
+
 
 with tab2:
     fig = px.scatter_3d(df.loc[(df['Kategorie_x'] == 'Treiber')], x='Certainty_y', y='Zeit_y', z='Impact_y', color='STEEP-Kategorie_y', width = 1000, height = 1000, size='Impact_y', text='Kurzindikator')
