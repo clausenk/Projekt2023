@@ -13,6 +13,7 @@ st.set_page_config(layout='wide')
 st.title('Darstellung der Indikatoren in 3D')
 st.write('Die Kategorien in der Legende können angeklickt werden, um die Indikatoren nach Kategorien zu filtern.')
 keep_checkbox = st.checkbox('Nur Relevante Indikatoren', value=True, key='Keep')
+keepSzenario_checkbox = st.checkbox('Nur Relevante Szenarien', value=True, key='KeepSzenario')
 #merge dataframe with other dataframe
 df = pd.merge(df, df_withRandom_Values, on='Indikator', how='outer')
 df_SzenarioDescription = pd.read_excel('./Szenario/Szenario.xlsx')
@@ -20,6 +21,9 @@ df_SzenarioDescription = pd.read_excel('./Szenario/Szenario.xlsx')
 df_SzenarioDescription = df_SzenarioDescription.dropna(subset=['Name des Scenarios'])
 df_SzenarioDescription = df_SzenarioDescription.dropna(subset=['Kurzbeschreibung des Thread /Scenarios'])
 
+if keepSzenario_checkbox == True:
+    #drop all lines where the value of the column 'Presentable' is 0
+    df_SzenarioDescription = df_SzenarioDescription[df_SzenarioDescription['Presentable'] != 0]
 
 if keep_checkbox == True:
     #drop all lines where the value of the column 'Keep' is 0
