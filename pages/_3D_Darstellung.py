@@ -83,6 +83,10 @@ with tab1:
     meanCertainty = seleceted_column['Certainty_x'].mean()
     meanImpact = seleceted_column['Impact_x'].mean()
 
+    #round the mean to 1 decimal place
+    meanCertainty = round(meanCertainty, 1)
+    meanImpact = round(meanImpact, 1)
+
     st.write('Durchschnittliche Sicherheit: ' + str(meanCertainty))
     st.write('Durchschnittlicher Impact: ' + str(meanImpact))
 
