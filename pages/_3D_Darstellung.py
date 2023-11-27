@@ -75,7 +75,17 @@ with tab1:
     st.plotly_chart(fig, use_container_width=True)
 
     #only show the columns 'kurzindikator'
+
+    #change the column name of the column with the selected_column name to Indikatorbeschreibung
     st.write(seleceted_column)
+
+    #get all the values in the column certainty_x and calculate the mean of them
+    meanCertainty = seleceted_column['Certainty_x'].mean()
+    meanImpact = seleceted_column['Impact_x'].mean()
+
+    st.write('Durchschnittliche Sicherheit: ' + str(meanCertainty))
+    st.write('Durchschnittlicher Impact: ' + str(meanImpact))
+
 
 with tab2:
     fig = px.scatter_3d(df.loc[(df['Kategorie_x'] == 'Treiber')], x='Certainty_y', y='Zeit_y', z='Impact_y', color='STEEP-Kategorie_y', width = 1000, height = 1000, size='Impact_y', text='Kurzindikator')
