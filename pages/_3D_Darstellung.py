@@ -42,7 +42,7 @@ for index, row in df_SzenarioDescription.iterrows():
             df_SzenarioDescription.drop(index, inplace=True)
 
 
-szenario = st.selectbox('Thread (Beta)',df_SzenarioDescription['Name des Scenarios'].unique())
+szenario = st.selectbox('Szenario',df_SzenarioDescription['Name des Scenarios'].unique())
 
 #get the description of the selected Szenario and show it
 szenarioDescription = df_SzenarioDescription.loc[df_SzenarioDescription['Name des Scenarios'] == szenario, 'Kurzbeschreibung des Thread /Scenarios'].iloc[0]
