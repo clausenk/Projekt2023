@@ -29,18 +29,13 @@ if keep_checkbox == True:
     #drop all lines where the value of the column 'Keep' is 0
     df = df[df['Keep'] != 0]
 
+
 #check if all the Szenarios have a corresponding Data in the other Excel file
 for index, row in df_SzenarioDescription.iterrows():
     #check in the other Excel file if the Szenario is in there based on the Name of the Creator
     if row['Name'] not in df.columns:
         #if the Szenario is not in the other Excel file, delete the row from the DataFrame
         df_SzenarioDescription.drop(index, inplace=True)
-    else:
-        #check if the Column of the Creator is empty or only contains 1 value
-        if df[row['Name']].isnull().all() or df[row['Name']].nunique() == 1:
-            #if the Column of the Creator is empty or only contains 1 value, delete the row from the DataFrame
-            df_SzenarioDescription.drop(index, inplace=True)
-
 
 szenario = st.selectbox('Szenario',df_SzenarioDescription['Name des Scenarios'].unique())
 
