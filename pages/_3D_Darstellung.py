@@ -41,6 +41,7 @@ for index, row in df_SzenarioDescription.iterrows():
             #if the Column of the Creator is empty or only contains 1 value, delete the row from the DataFrame
             df_SzenarioDescription.drop(index, inplace=True)
 
+st.write(df_SzenarioDescription)
 
 szenario = st.selectbox('Szenario',df_SzenarioDescription['Name des Scenarios'].unique())
 
